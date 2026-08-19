@@ -70,7 +70,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ currentPage, onNavigate })
                 )}
               </div>
 
-              <span className="text-[10px] uppercase tracking-wider mt-1 font-display">
+              <span className="text-[11px] uppercase tracking-wider mt-1 font-black font-display">
                 {tab.label}
               </span>
             </button>

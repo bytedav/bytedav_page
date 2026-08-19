@@ -3,6 +3,7 @@ import { PageId } from '../types';
 import { PORTFOLIO_BRANDS, HOLDING_PILLARS } from '../data/holdingData';
 import { SectionHeader } from '../components/SectionHeader';
 import { BrandCard } from '../components/BrandCard';
+import { PartnershipBanner } from '../components/PartnershipBanner';
 import { ArrowRight, ShieldCheck, Layers, Cpu, TrendingUp, Sparkles, BookOpen } from 'lucide-react';
 
 interface HomePageProps {
@@ -35,14 +36,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           <div className="absolute -bottom-16 -left-16 w-48 sm:w-64 h-48 sm:h-64 rounded-full bg-white/5 pointer-events-none" />
 
           <div className="relative z-10 max-w-3xl">
-            {/* Duolingo Unit Header Badge */}
-            <div className="flex items-center justify-between gap-2 mb-3 sm:mb-4">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-xs text-white text-[11px] sm:text-xs font-black uppercase tracking-wider border border-white/20">
-                <Sparkles className="w-3.5 h-3.5 text-[#ffc800]" />
-                <span>Holding Operador Multimarca</span>
-              </div>
-
-              {/* Duolingo Guidebook Button on Mobile */}
+            {/* Duolingo Guidebook Button on Mobile */}
+            <div className="flex items-center justify-end gap-2 mb-3 sm:mb-4">
               <button
                 onClick={() => onNavigate('historia')}
                 className="inline-flex items-center gap-1 px-3 py-1 rounded-xl bg-white/10 hover:bg-white/20 text-white text-[11px] sm:text-xs font-black uppercase tracking-wider border border-white/20 transition-colors cursor-pointer"
@@ -52,26 +47,22 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </button>
             </div>
 
-            <h1 className="text-2xl xs:text-3xl sm:text-5xl md:text-6xl font-black text-white leading-tight tracking-tight mb-3 sm:mb-4 font-display">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.08] tracking-tight mb-6 sm:mb-8 font-display">
               Impulsando el futuro del comercio especializado.
             </h1>
-
-            <p className="text-xs sm:text-base md:text-lg text-zinc-300 max-w-2xl mb-6 sm:mb-8 font-semibold leading-relaxed">
-              Bytedav es el holding operador de marcas verticales líderes, incluyendo <strong className="text-white underline decoration-zinc-500">Kaelos</strong>, el marketplace digital de motocicletas. Estructuramos, financiamos y aceleramos la economía de movilidad.
-            </p>
 
             <div className="flex flex-col xs:flex-row gap-2.5 sm:gap-4">
               <button
                 id="hero-cta-portfolio"
                 onClick={() => onNavigate('marcas')}
-                className="w-full xs:w-auto px-6 sm:px-8 py-3.5 rounded-2xl bg-white border-b-4 border-[#e5e5e5] text-[#18181b] font-black text-xs sm:text-sm uppercase tracking-wider hover:bg-[#f4f4f5] active:translate-y-1 active:border-b-0 transition-all shadow-xs cursor-pointer text-center"
+                className="w-full xs:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-white border-b-4 border-[#e5e5e5] text-[#18181b] font-black text-sm sm:text-base uppercase tracking-wider hover:bg-[#f4f4f5] active:translate-y-1 active:border-b-0 transition-all shadow-xs cursor-pointer text-center"
               >
-                Nuestro Portafolio
+                Nuestras Marcas
               </button>
               <button
                 id="hero-cta-historia"
                 onClick={() => onNavigate('historia')}
-                className="w-full xs:w-auto px-6 sm:px-8 py-3.5 rounded-2xl bg-[#27272a] border-b-4 border-[#18181b] text-white font-black text-xs sm:text-sm uppercase tracking-wider hover:bg-[#3f3f46] active:translate-y-1 active:border-b-0 transition-all shadow-xs cursor-pointer text-center"
+                className="w-full xs:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-[#27272a] border-b-4 border-[#18181b] text-white font-black text-sm sm:text-base uppercase tracking-wider hover:bg-[#3f3f46] active:translate-y-1 active:border-b-0 transition-all shadow-xs cursor-pointer text-center"
               >
                 Nuestra Historia
               </button>
@@ -84,10 +75,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       <section className="w-full px-3.5 sm:px-8 max-w-7xl mx-auto mt-10 sm:mt-14">
         <div className="flex items-center justify-between mb-4 sm:mb-6">
           <div>
-            <div className="inline-block px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-xl bg-[#e5f6ff] text-[#1cb0f6] border border-[#84d8ff] text-[10px] sm:text-xs font-black uppercase tracking-wider mb-1 sm:mb-2">
-              Portafolio
+            <div className="inline-block px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-xl bg-[#e5f6ff] text-[#1cb0f6] border border-[#84d8ff] text-xs sm:text-sm font-black uppercase tracking-wider mb-1.5 sm:mb-2">
+              Marcas
             </div>
-            <h2 className="text-xl sm:text-3xl font-black text-[#18181b] font-display tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-black text-[#18181b] font-display tracking-tight">
               Marcas que lideran
             </h2>
           </div>
@@ -95,10 +86,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           <button
             id="view-all-brands-btn"
             onClick={() => onNavigate('marcas')}
-            className="px-3 sm:px-4 py-2 rounded-xl sm:rounded-2xl duo-btn-white text-xs flex items-center gap-1 cursor-pointer shrink-0"
+            className="px-3.5 sm:px-5 py-2.5 rounded-xl sm:rounded-2xl duo-btn-white text-xs sm:text-sm font-extrabold flex items-center gap-1.5 cursor-pointer shrink-0"
           >
             <span>Ver todas</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#18181b]" />
+            <ArrowRight className="w-4 h-4 text-[#18181b]" />
           </button>
         </div>
 
@@ -107,6 +98,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           {PORTFOLIO_BRANDS.map((brand) => (
             <BrandCard key={brand.id} brand={brand} />
           ))}
+        </div>
+
+        {/* Partnership / Deal Flow CTA Banner */}
+        <div className="mt-6 sm:mt-8">
+          <PartnershipBanner />
         </div>
       </section>
 
@@ -123,13 +119,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             {HOLDING_PILLARS.map((pillar, idx) => (
               <div
                 key={idx}
-                className="bg-[#f7f7f7] rounded-2xl p-4 sm:p-5 border-2 border-b-4 border-[#e5e5e5] hover:border-[#18181b] transition-all flex flex-col items-start"
+                className="bg-[#f7f7f7] rounded-2xl p-4 sm:p-6 border-2 border-b-4 border-[#e5e5e5] hover:border-[#18181b] transition-all flex flex-col items-start"
               >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white border-2 border-[#e5e5e5] flex items-center justify-center mb-2.5 sm:mb-3">
+                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white border-2 border-[#e5e5e5] flex items-center justify-center mb-3 sm:mb-4">
                   {getPillarIcon(idx)}
                 </div>
 
-                <h3 className="font-display text-sm sm:text-base font-black text-[#18181b] leading-snug">
+                <h3 className="font-display text-base sm:text-lg font-black text-[#18181b] leading-snug">
                   {pillar.title}
                 </h3>
               </div>
@@ -137,16 +133,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
 
           {/* Duolingo Style Achievement Banner */}
-          <div className="mt-6 sm:mt-8 bg-[#18181b] border-b-6 border-[#09090b] text-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 relative overflow-hidden">
-            <div className="relative z-10 max-w-3xl space-y-2.5 sm:space-y-3">
-              <h3 className="font-display text-lg sm:text-3xl font-black tracking-tight leading-tight">
+          <div className="mt-6 sm:mt-8 bg-[#18181b] border-b-6 border-[#09090b] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+            <div className="relative z-10 max-w-3xl space-y-3 sm:space-y-4">
+              <h3 className="font-display text-xl sm:text-3xl md:text-4xl font-black tracking-tight leading-tight">
                 Generamos valor a largo plazo a través de ventajas estructurales sostenibles.
               </h3>
               <div className="pt-2">
                 <button
                   id="home-explore-holding-btn"
                   onClick={() => onNavigate('historia')}
-                  className="w-full sm:w-auto px-6 py-3 rounded-2xl bg-white border-b-4 border-[#e5e5e5] text-[#18181b] font-black text-xs uppercase tracking-wider hover:bg-[#f4f4f5] active:translate-y-1 active:border-b-0 transition-all cursor-pointer shadow-xs text-center"
+                  className="w-full sm:w-auto px-7 py-3.5 sm:py-4 rounded-2xl bg-white border-b-4 border-[#e5e5e5] text-[#18181b] font-black text-xs sm:text-sm uppercase tracking-wider hover:bg-[#f4f4f5] active:translate-y-1 active:border-b-0 transition-all cursor-pointer shadow-xs text-center"
                 >
                   Conocer Nuestra Trayectoria
                 </button>

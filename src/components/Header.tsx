@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { PageId } from '../types';
-import { HOLDING_CONFIG } from '../data/holdingData';
 import { BytedavLogo } from './BytedavLogo';
-import { Flame, Gem, Zap, Home, BookOpen, Users, LayoutGrid } from 'lucide-react';
+import { Home, BookOpen, Users, LayoutGrid } from 'lucide-react';
 
 interface HeaderProps {
   currentPage: PageId;
   onNavigate: (page: PageId) => void;
-  isHome: boolean;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -68,10 +66,10 @@ export const Header: React.FC<HeaderProps> = ({
                 key={item.id}
                 id={`nav-link-${item.id}`}
                 onClick={() => handleNavClick(item.id)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-2xl text-sm font-extrabold uppercase tracking-wider transition-all duration-150 cursor-pointer ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-sm lg:text-base font-black uppercase tracking-wider transition-all duration-150 cursor-pointer ${
                   isActive
                     ? 'bg-[#18181b] text-white border-2 border-[#18181b] border-b-4 shadow-xs'
-                    : 'text-[#777777] hover:bg-[#f7f7f7] hover:text-[#18181b]'
+                    : 'text-[#71717a] hover:bg-[#f7f7f7] hover:text-[#18181b]'
                 }`}
               >
                 {item.icon}

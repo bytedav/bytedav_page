@@ -1,6 +1,6 @@
 import React from 'react';
 import { PortfolioBrand } from '../types';
-import { ExternalLink, CheckCircle2 } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 interface BrandCardProps {
   brand: PortfolioBrand;
@@ -26,58 +26,41 @@ export const BrandCard: React.FC<BrandCardProps> = ({
             referrerPolicy="no-referrer"
             loading="lazy"
           />
-          {brand.isFlagship && (
-            <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 bg-[#ffc800] border-b-2 border-[#e5a500] text-[#3c3c3c] text-[9px] sm:text-[10px] font-black uppercase px-2.5 py-1 rounded-xl shadow-xs">
-              Marca Insignia
-            </div>
-          )}
         </div>
 
         {/* Card Header */}
         <div className="mb-2.5 sm:mb-3">
-          <div className="flex items-center justify-between mb-1">
-            <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-[#1cb0f6]">
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-[#1cb0f6]">
               {brand.category}
             </span>
-            <span className="text-[10px] sm:text-xs font-bold font-mono text-[#777777] bg-[#f7f7f7] px-2 py-0.5 rounded-lg border border-[#e5e5e5]">
+            <span className="text-xs sm:text-sm font-bold font-mono text-[#52525b] bg-[#f7f7f7] px-2.5 py-0.5 rounded-lg border border-[#e5e5e5]">
               {brand.yearFounded}
             </span>
           </div>
 
-          <h4 className="text-lg sm:text-xl font-extrabold text-[#3c3c3c] tracking-tight font-display">
+          <h4 className="text-xl sm:text-2xl font-black text-[#18181b] tracking-tight font-display">
             {brand.name}
           </h4>
-          <p className="text-xs text-[#777777] font-semibold leading-relaxed mt-1">
+          <p className="text-sm sm:text-base text-[#52525b] font-medium leading-relaxed mt-1.5">
             {brand.description}
           </p>
         </div>
-
-        {/* Features / Highlights */}
-        {brand.features && brand.features.length > 0 && (
-          <div className="space-y-1.5 my-2.5 sm:my-3">
-            {brand.features.slice(0, 2).map((feat, idx) => (
-              <div key={idx} className="flex items-start gap-1.5 text-xs text-[#4b4b4b] font-medium">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#58cc02] shrink-0 mt-0.5" />
-                <span className="text-[11px] leading-tight">{feat}</span>
-              </div>
-            ))}
-          </div>
-        )}
       </div>
 
       {/* Card Actions - Duolingo 3D Button with min 44px touch target */}
       {showActions && (
-        <div className="pt-3 border-t-2 border-[#f0f0f0] mt-2 sm:mt-3">
+        <div className="pt-3.5 border-t-2 border-[#f0f0f0] mt-3 sm:mt-4">
           <a
             id={`visit-website-${brand.id}`}
             href={brand.websiteUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full min-h-[44px] flex items-center justify-center gap-2 py-2.5 px-4 rounded-2xl duo-btn-green text-xs cursor-pointer shadow-xs"
+            className="w-full min-h-[46px] flex items-center justify-center gap-2 py-3 px-5 rounded-2xl duo-btn-green text-xs sm:text-sm font-black uppercase tracking-wider cursor-pointer shadow-xs"
             title={`Ir al sitio oficial de ${brand.name}`}
           >
             <span>Visitar Sitio Oficial</span>
-            <ExternalLink className="w-3.5 h-3.5" />
+            <ExternalLink className="w-4 h-4" />
           </a>
         </div>
       )}

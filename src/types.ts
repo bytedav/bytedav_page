@@ -1,12 +1,5 @@
 export type PageId = 'home' | 'historia' | 'liderazgo' | 'marcas';
 
-export interface KeyStat {
-  value: string;
-  label: string;
-  sublabel?: string;
-  highlight?: boolean;
-}
-
 export interface PortfolioBrand {
   id: string;
   name: string;

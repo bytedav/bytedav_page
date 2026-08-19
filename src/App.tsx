@@ -58,15 +58,14 @@ export default function App() {
       <Header
         currentPage={currentPage}
         onNavigate={navigateTo}
-        isHome={currentPage === 'home'}
       />
 
       {/* Main Content Area - with mobile bottom padding for BottomNav */}
       <main className="flex-1 w-full pb-20 md:pb-0">
         {currentPage === 'home' && <HomePage onNavigate={navigateTo} />}
         {currentPage === 'historia' && <HistoriaPage onNavigate={navigateTo} />}
-        {currentPage === 'liderazgo' && <LiderazgoPage onNavigate={navigateTo} />}
-        {currentPage === 'marcas' && <MarcasPage onNavigate={navigateTo} />}
+        {currentPage === 'liderazgo' && <LiderazgoPage />}
+        {currentPage === 'marcas' && <MarcasPage />}
       </main>
 
       {/* Corporate Duolingo Footer */}

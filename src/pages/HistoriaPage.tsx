@@ -45,41 +45,6 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
       badgeText: 'text-[#46a302]',
       name: 'Fundación',
     },
-    {
-      bg: 'bg-[#1cb0f6] hover:bg-[#2ec5ff]',
-      shadow: 'border-b-6 border-[#1899d6]',
-      badgeBg: 'bg-sky-50 text-[#1cb0f6] border-sky-200',
-      badgeText: 'text-[#1cb0f6]',
-      name: 'Lanzamiento',
-    },
-    {
-      bg: 'bg-[#ff9600] hover:bg-[#ffa929]',
-      shadow: 'border-b-6 border-[#e58700]',
-      badgeBg: 'bg-amber-50 text-[#e58700] border-amber-200',
-      badgeText: 'text-[#e58700]',
-      name: 'Tracción',
-    },
-    {
-      bg: 'bg-[#ce82ff] hover:bg-[#d89bfb]',
-      shadow: 'border-b-6 border-[#a557df]',
-      badgeBg: 'bg-purple-50 text-[#a557df] border-purple-200',
-      badgeText: 'text-[#a557df]',
-      name: 'Expansión',
-    },
-    {
-      bg: 'bg-[#ffc800] hover:bg-[#ffd22e]',
-      shadow: 'border-b-6 border-[#e5a500]',
-      badgeBg: 'bg-yellow-50 text-[#e5a500] border-yellow-200',
-      badgeText: 'text-[#e5a500]',
-      name: 'Tecnología',
-    },
-    {
-      bg: 'bg-[#ff4b4b] hover:bg-[#ff6969]',
-      shadow: 'border-b-6 border-[#ea2b2b]',
-      badgeBg: 'bg-rose-50 text-[#ea2b2b] border-rose-200',
-      badgeText: 'text-[#ea2b2b]',
-      name: 'Ecosistema',
-    },
   ];
 
   // Mobile-adapted snake offsets: subtle on small screens, wider on desktop
@@ -103,15 +68,11 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
     <div id="historia-page" className="w-full flex flex-col pb-10 sm:pb-16">
       {/* 1. Duolingo Unit Header Banner */}
       <section className="w-full px-3.5 sm:px-8 max-w-7xl mx-auto pt-4 sm:pt-8">
-        <div className="bg-[#ce82ff] border-b-6 border-[#a557df] rounded-3xl sm:rounded-4xl p-5 sm:p-10 text-white shadow-md">
+        <div className="bg-[#ce82ff] border-b-6 border-[#a557df] rounded-3xl sm:rounded-4xl p-6 sm:p-12 text-white shadow-md">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-white text-[11px] sm:text-xs font-black uppercase tracking-wider mb-2">
-                <Star className="w-3.5 h-3.5 text-[#ffc800] fill-[#ffc800]" />
-                <span>Ruta de Hitos Corporativos</span>
-              </div>
-              <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight font-display">
-                De una visión de movilidad a un holding multimarca.
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight font-display leading-[1.1]">
+                Construyendo las bases de un holding operador de nueva generación.
               </h1>
             </div>
           </div>
@@ -157,42 +118,42 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
                     </span>
                   </button>
 
-                  <span className="mt-3.5 text-[11px] sm:text-xs font-black uppercase tracking-wider text-[#777777] font-display">
+                  <span className="mt-3.5 text-xs sm:text-sm font-black uppercase tracking-wider text-[#52525b] font-display">
                     {milestone.quarter ? `${milestone.quarter} • ` : ''}{theme.name}
                   </span>
                 </div>
 
                 {/* Duolingo Speech Bubble / Dialog Card */}
                 <div
-                  className={`mt-3 w-full max-w-lg bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 border-2 border-b-4 border-[#e5e5e5] shadow-xs relative transition-all duration-200 ${
+                  className={`mt-3 w-full max-w-lg bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border-2 border-b-4 border-[#e5e5e5] shadow-xs relative transition-all duration-200 ${
                     isSelected ? 'ring-4 ring-[#58cc02]/30 border-[#58cc02]' : ''
                   }`}
                 >
                   <div className="relative z-10">
                     {/* Header with Badges */}
-                    <div className="flex flex-wrap items-center justify-between gap-2 mb-2 sm:mb-3">
-                      <div className="flex items-center gap-1.5 sm:gap-2">
-                        <span className={`text-[10px] sm:text-xs font-extrabold uppercase tracking-wider px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-xl border ${theme.badgeBg}`}>
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5 sm:mb-3.5">
+                      <div className="flex items-center gap-2">
+                        <span className={`text-xs sm:text-sm font-black uppercase tracking-wider px-3 py-1 sm:px-3.5 sm:py-1 rounded-xl border ${theme.badgeBg}`}>
                           {milestone.category}
                         </span>
-                        <span className="font-mono text-[10px] sm:text-xs font-bold text-[#777777] bg-[#f7f7f7] border border-[#e5e5e5] px-2 py-0.5 rounded-lg">
+                        <span className="font-mono text-xs sm:text-sm font-bold text-[#52525b] bg-[#f7f7f7] border border-[#e5e5e5] px-2.5 py-1 rounded-lg">
                           {milestone.year} {milestone.quarter}
                         </span>
                       </div>
 
                       {milestone.metricsBadge && (
-                        <span className="inline-flex items-center gap-1 text-[10px] sm:text-xs font-mono font-black px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-xl bg-amber-50 border border-amber-200 text-amber-700">
-                          <CheckCircle2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-500" />
+                        <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-black px-2.5 py-1 sm:px-3 sm:py-1 rounded-xl bg-amber-50 border border-amber-200 text-amber-700">
+                          <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500" />
                           {milestone.metricsBadge}
                         </span>
                       )}
                     </div>
 
-                    <h3 className="font-display text-base sm:text-xl font-black text-[#3c3c3c] mb-1.5 sm:mb-2 tracking-tight">
+                    <h3 className="font-display text-lg sm:text-2xl font-black text-[#18181b] mb-2 sm:mb-2.5 tracking-tight">
                       {milestone.title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-[#777777] font-semibold leading-relaxed">
+                    <p className="text-sm sm:text-base text-[#52525b] font-medium leading-relaxed">
                       {milestone.description}
                     </p>
                   </div>
@@ -213,12 +174,9 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
             <div className="w-18 h-18 sm:w-22 sm:h-22 rounded-full bg-[#ffc800] border-b-6 border-[#e5a500] flex items-center justify-center shadow-md">
               <Trophy className="w-8 h-8 sm:w-10 sm:h-10 text-white fill-white/40" />
             </div>
-            <span className="mt-2.5 text-xs font-black uppercase tracking-wider text-[#3c3c3c] font-display">
-              Visión Hacia el Futuro
+            <span className="mt-3 text-sm sm:text-base font-black uppercase tracking-wider text-[#18181b] font-display">
+              Próximos Horizontes
             </span>
-            <p className="text-xs text-[#777777] font-semibold text-center mt-0.5 max-w-xs px-2">
-              El holding continúa incubando y expandiendo plataformas en toda la región.
-            </p>
           </div>
         </div>
       </section>
@@ -233,43 +191,43 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-            <div className="bg-[#f7f7f7] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border-2 border-b-4 border-[#e5e5e5] flex flex-col justify-between">
+            <div className="bg-[#f7f7f7] p-5 sm:p-7 rounded-2xl sm:rounded-3xl border-2 border-b-4 border-[#e5e5e5] flex flex-col justify-between">
               <div>
-                <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-[#58cc02] border-b-3 border-[#46a302] text-white font-black text-base sm:text-lg flex items-center justify-center mb-3 sm:mb-4">
+                <span className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#58cc02] border-b-3 border-[#46a302] text-white font-black text-lg sm:text-xl flex items-center justify-center mb-3.5 sm:mb-4">
                   01
                 </span>
-                <h3 className="font-display text-base sm:text-lg font-black text-[#3c3c3c] mb-1.5 sm:mb-2">
+                <h3 className="font-display text-lg sm:text-xl font-black text-[#18181b] mb-2 sm:mb-2.5">
                   Foco en Economía Real y Utilidad
                 </h3>
-                <p className="text-xs sm:text-sm text-[#777777] font-semibold leading-relaxed">
+                <p className="text-sm sm:text-base text-[#52525b] font-medium leading-relaxed">
                   No creamos marcas para inflar métricas vanidosas. Desarrollamos soluciones que resuelven problemas concretos de transporte, acceso a crédito e infraestructura para personas y empresas.
                 </p>
               </div>
             </div>
 
-            <div className="bg-[#f7f7f7] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border-2 border-b-4 border-[#e5e5e5] flex flex-col justify-between">
+            <div className="bg-[#f7f7f7] p-5 sm:p-7 rounded-2xl sm:rounded-3xl border-2 border-b-4 border-[#e5e5e5] flex flex-col justify-between">
               <div>
-                <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-[#1cb0f6] border-b-3 border-[#1899d6] text-white font-black text-base sm:text-lg flex items-center justify-center mb-3 sm:mb-4">
+                <span className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#1cb0f6] border-b-3 border-[#1899d6] text-white font-black text-lg sm:text-xl flex items-center justify-center mb-3.5 sm:mb-4">
                   02
                 </span>
-                <h3 className="font-display text-base sm:text-lg font-black text-[#3c3c3c] mb-1.5 sm:mb-2">
+                <h3 className="font-display text-lg sm:text-xl font-black text-[#18181b] mb-2 sm:mb-2.5">
                   Soberanía Tecnológica
                 </h3>
-                <p className="text-xs sm:text-sm text-[#777777] font-semibold leading-relaxed">
-                  A través de Bytelab Studio, construimos y mantenemos nuestra propia propiedad intelectual. La arquitectura de microservicios propia nos da independencia y velocidad de adaptación.
+                <p className="text-sm sm:text-base text-[#52525b] font-medium leading-relaxed">
+                  Construimos y mantenemos nuestra propia propiedad intelectual. La arquitectura de microservicios propia nos da independencia y velocidad de adaptación.
                 </p>
               </div>
             </div>
 
-            <div className="bg-[#f7f7f7] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border-2 border-b-4 border-[#e5e5e5] flex flex-col justify-between">
+            <div className="bg-[#f7f7f7] p-5 sm:p-7 rounded-2xl sm:rounded-3xl border-2 border-b-4 border-[#e5e5e5] flex flex-col justify-between">
               <div>
-                <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-[#ff9600] border-b-3 border-[#e58700] text-white font-black text-base sm:text-lg flex items-center justify-center mb-3 sm:mb-4">
+                <span className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#ff9600] border-b-3 border-[#e58700] text-white font-black text-lg sm:text-xl flex items-center justify-center mb-3.5 sm:mb-4">
                   03
                 </span>
-                <h3 className="font-display text-base sm:text-lg font-black text-[#3c3c3c] mb-1.5 sm:mb-2">
+                <h3 className="font-display text-lg sm:text-xl font-black text-[#18181b] mb-2 sm:mb-2.5">
                   Disciplina de Capital
                 </h3>
-                <p className="text-xs sm:text-sm text-[#777777] font-semibold leading-relaxed">
+                <p className="text-sm sm:text-base text-[#52525b] font-medium leading-relaxed">
                   Crecimiento sostenible sustentado en unit economics saludables. Reinvertimos sistemáticamente en investigación y fortalecimiento del equipo directivo y técnico.
                 </p>
               </div>
@@ -280,9 +238,9 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
           <div className="mt-8 sm:mt-10 text-center">
             <button
               onClick={() => onNavigate('marcas')}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-2xl duo-btn-green text-xs cursor-pointer shadow-xs text-center"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 sm:px-9 py-4 rounded-2xl duo-btn-green text-sm sm:text-base font-black uppercase tracking-wider cursor-pointer shadow-xs text-center"
             >
-              <span>Ver las marcas creadas en esta trayectoria</span>
+              <span>Ver las marcas del holding</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
