@@ -1,0 +1,6 @@
+{
+  "name": "Bytedav Holding",
+  "description": "Sitio web corporativo e institucional de Bytedav, grupo holding operador de marcas líderes en movilidad y tecnología como Kaelos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
