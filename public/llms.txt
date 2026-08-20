@@ -1,10 +1,9 @@
-# Bytedav Holding
+# Bytedav Holding, Bytedav
 
-> Bytedav es un holding tecnológico operador especializado en concebir, estructurar y escalar plataformas de movilidad y servicios digitales de alto impacto.
-
+> Bytedav es un holding tecnológico operador especializado en concebir, estructurar y escalar Empresas.
 ## Resumen Corporativo
 
-Bytedav opera como grupo matriz tecnológico con un modelo de autonomía operativa, infraestructura técnica compartida y disciplina de capital. Desarrolla soluciones orientadas a la economía real en sectores verticales, iniciando con el mercado de movilidad.
+Bytedav opera como grupo matriz tecnológico con un modelo de autonomía operativa, infraestructura técnica compartida y disciplina de capital. Desarrolla soluciones orientadas a la economía real en sectores verticales.
 
 - **Fundador y CEO**: David Bermudez A.
 - **Contacto Corporativo**: bytedav@gmail.com
