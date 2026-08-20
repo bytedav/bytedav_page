@@ -34,8 +34,8 @@ export const MILESTONES: Milestone[] = [
   {
     year: '2026',
     quarter: 'Incubación',
-    title: 'Constitución de Kaelos',
-    description: 'La mayor plataforma de venta de motos nuevas y ocasión.',
+    title: 'Kaelos',
+    description: '1ra Incubación en el sector de motocicletas',
     highlight: true,
     metricsBadge: 'Kaelos',
   },
