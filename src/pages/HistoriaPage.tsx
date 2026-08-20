@@ -119,8 +119,8 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
                   </button>
 
                   <span className="mt-3.5 text-xs sm:text-sm font-black uppercase tracking-wider text-[#52525b] font-display">
-                    {milestone.quarter ? `${milestone.quarter} • ` : ''}{theme.name}
-                  </span>
+  {milestone.quarter}
+</span>
                 </div>
 
                 {/* Duolingo Speech Bubble / Dialog Card */}
