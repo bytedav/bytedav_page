@@ -9,8 +9,8 @@ interface PageSEO {
 
 const SEO_MAP: Record<PageId, PageSEO> = {
   home: {
-    title: 'Bytedav | Holding Operador de Plataformas y Movilidad Digital',
-    description: 'Conoce Bytedav, holding tecnológico operador de plataformas líderes en movilidad y servicios digitales como Kaelos. Innovación, estrategia y valor real.',
+    title: 'Bytedav',
+    description: 'Conoce Bytedav, holding tecnológico operador de plataformas líderes. Innovación, estrategia y valor real.',
     url: 'https://bytedav.com/',
   },
   historia: {
