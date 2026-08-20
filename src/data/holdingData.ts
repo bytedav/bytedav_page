@@ -27,8 +27,6 @@ export const PORTFOLIO_BRANDS: PortfolioBrand[] = [
   {
     id: 'kaelos',
     name: 'Kaelos',
-    tagline: 'Marketplace digital especializado en motocicletas y dos ruedas',
-    category: 'Movilidad & Marketplace',
     yearFounded: 2022,
     description: 'Plataforma líder que conecta compradores y concesionarios de motocicletas con verificación técnica certificada, cotización y gestión de trámites.',
     fullOverview: 'Kaelos es la marca insignia de Bytedav en el sector de movilidad sobre dos ruedas. Nació para transformar la experiencia de compra y venta de motocicletas, integrando catálogo verificado, evaluación mecánica transparente, opciones de financiamiento directo y entrega a domicilio.',
