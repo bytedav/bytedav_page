@@ -43,7 +43,7 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
       shadow: 'border-b-6 border-[#46a302]',
       badgeBg: 'bg-emerald-50 text-[#46a302] border-emerald-200',
       badgeText: 'text-[#46a302]',
-      name: 'Fundación',
+   
     },
   ];
 
