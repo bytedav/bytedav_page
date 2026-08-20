@@ -27,9 +27,9 @@ export const MILESTONES: Milestone[] = [
     year: '2023',
     quarter: 'Fundación',
     title: 'Constitución de Bytedav',
-    description: 'Nacimiento de Bytedav como holding operador con la misión de concebir, estructurar y escalar plataformas tecnológicas verticales de alta tracción.',
+    description: 'Nacimiento de Bytedav como empresa para controlar todos nuestras marcas.',
     highlight: true,
-    metricsBadge: 'Fundación',
+    metricsBadge: 'Enero',
   },
 ];
 
