@@ -28,17 +28,17 @@ export const BrandCard: React.FC<BrandCardProps> = ({
           />
         </div>
 
-        {/* Card Header */}
+        {/* Card Header: Brand Name and Year Badge in one single row */}
         <div className="mb-2.5 sm:mb-3">
-          <div className="flex items-center justify-end mb-1.5">
-            <span className="text-xs sm:text-sm font-bold font-mono text-[#52525b] bg-[#f7f7f7] px-2.5 py-0.5 rounded-lg border border-[#e5e5e5]">
+          <div className="flex items-center justify-between gap-2 mb-1.5">
+            <h4 className="text-xl sm:text-2xl font-black text-[#18181b] tracking-tight font-display">
+              {brand.name}
+            </h4>
+            <span className="text-xs sm:text-sm font-bold font-mono text-[#52525b] bg-[#f7f7f7] px-2.5 py-0.5 rounded-lg border border-[#e5e5e5] shrink-0">
               {brand.yearFounded}
             </span>
           </div>
 
-          <h4 className="text-xl sm:text-2xl font-black text-[#18181b] tracking-tight font-display">
-            {brand.name}
-          </h4>
           <p className="text-sm sm:text-base text-[#52525b] font-medium leading-relaxed mt-1.5">
             {brand.description}
           </p>

@@ -27,28 +27,15 @@ export const BytedavLogo: React.FC<BytedavLogoProps> = ({
 
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
-      {/* 3D Duolingo-styled container with the official black "bd" continuous ligature */}
+      {/* 3D container with the official bytedav image */}
       <div
-        className={`${iconSizes[size]} bg-white border-2 border-b-4 border-[#e5e5e5] group-hover:border-[#18181b] rounded-2xl flex items-center justify-center p-1 shadow-xs transition-all`}
+        className={`${iconSizes[size]} bg-white border-2 border-b-4 border-[#e5e5e5] group-hover:border-[#18181b] rounded-2xl flex items-center justify-center p-1 shadow-xs transition-all overflow-hidden`}
       >
-        <svg
-          viewBox="0 0 200 200"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full"
-        >
-          {/* Continuous bd infinity ligature */}
-          <g stroke="#141414" strokeWidth="22" strokeLinecap="round" strokeLinejoin="round" fill="none">
-            {/* Left ascender (b) */}
-            <path d="M54 38 V118" />
-            {/* Left loop (b) */}
-            <circle cx="80" cy="118" r="26" />
-            {/* Right loop (d) */}
-            <circle cx="120" cy="118" r="26" />
-            {/* Right ascender (d) */}
-            <path d="M146 38 V118" />
-          </g>
-        </svg>
+        <img
+          src="/bytedav.png"
+          alt="Bytedav Logo"
+          className="w-full h-full object-contain rounded-xl"
+        />
       </div>
 
       {showText && (

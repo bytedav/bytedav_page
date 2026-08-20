@@ -193,12 +193,9 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
                 <span className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#58cc02] border-b-3 border-[#46a302] text-white font-black text-lg sm:text-xl flex items-center justify-center mb-3.5 sm:mb-4">
                   01
                 </span>
-                <h3 className="font-display text-lg sm:text-xl font-black text-[#18181b] mb-2 sm:mb-2.5">
+                <h3 className="font-display text-lg sm:text-xl font-black text-[#18181b]">
                   Foco en Economía Real y Utilidad
                 </h3>
-                <p className="text-sm sm:text-base text-[#52525b] font-medium leading-relaxed">
-                  No creamos marcas para inflar métricas vanidosas. Desarrollamos soluciones que resuelven problemas concretos de transporte, acceso a crédito e infraestructura para personas y empresas.
-                </p>
               </div>
             </div>
 
@@ -207,12 +204,9 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
                 <span className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#1cb0f6] border-b-3 border-[#1899d6] text-white font-black text-lg sm:text-xl flex items-center justify-center mb-3.5 sm:mb-4">
                   02
                 </span>
-                <h3 className="font-display text-lg sm:text-xl font-black text-[#18181b] mb-2 sm:mb-2.5">
+                <h3 className="font-display text-lg sm:text-xl font-black text-[#18181b]">
                   Soberanía Tecnológica
                 </h3>
-                <p className="text-sm sm:text-base text-[#52525b] font-medium leading-relaxed">
-                  Construimos y mantenemos nuestra propia propiedad intelectual. La arquitectura de microservicios propia nos da independencia y velocidad de adaptación.
-                </p>
               </div>
             </div>
 
@@ -221,12 +215,9 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
                 <span className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#ff9600] border-b-3 border-[#e58700] text-white font-black text-lg sm:text-xl flex items-center justify-center mb-3.5 sm:mb-4">
                   03
                 </span>
-                <h3 className="font-display text-lg sm:text-xl font-black text-[#18181b] mb-2 sm:mb-2.5">
+                <h3 className="font-display text-lg sm:text-xl font-black text-[#18181b]">
                   Disciplina de Capital
                 </h3>
-                <p className="text-sm sm:text-base text-[#52525b] font-medium leading-relaxed">
-                  Crecimiento sostenible sustentado en unit economics saludables. Reinvertimos sistemáticamente en investigación y fortalecimiento del equipo directivo y técnico.
-                </p>
               </div>
             </div>
           </div>

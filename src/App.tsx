@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PageId } from './types';
+import { useSEO } from './hooks/useSEO';
 import { Header } from './components/Header';
 import { BottomNav } from './components/BottomNav';
 import { Footer } from './components/Footer';
@@ -10,6 +11,9 @@ import { MarcasPage } from './pages/MarcasPage';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
+
+  // Dynamically update SEO metadata, social graph tags and canonical link
+  useSEO(currentPage);
 
   // Parse path to PageId and clean any legacy hash in browser URL
   const getPageFromPath = (): PageId => {
