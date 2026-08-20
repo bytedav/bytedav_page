@@ -16,7 +16,7 @@ export const PartnershipBanner: React.FC<PartnershipBannerProps> = ({
       onAction();
       return;
     }
-    const mailtoUrl = `mailto:${HOLDING_CONFIG.contactEmail || 'corporativo@bytedav.com'}?subject=${encodeURIComponent('Propuesta de Inversión / Partnership / Adquisición - Bytedav')}&body=${encodeURIComponent('Hola equipo de Bytedav,\n\nMe pongo en contacto para presentarles una oportunidad de inversión / partnership / adquisición relacionada con nuestra marca:\n\n- Nombre de la marca:\n- Sector / Enfoque:\n- Enlace web / presentación:\n\nSaludos cordiales,')}`;
+    const mailtoUrl = `mailto:${HOLDING_CONFIG.contactEmail || 'bytedav@gmail.com'}?subject=${encodeURIComponent('Propuesta de Inversión / Partnership / Adquisición - Bytedav')}&body=${encodeURIComponent('Hola equipo de Bytedav,\n\nMe pongo en contacto para presentarles una oportunidad de inversión / partnership / adquisición relacionada con nuestra marca:\n\n- Nombre de la marca:\n- Sector / Enfoque:\n- Enlace web / presentación:\n\nSaludos cordiales,')}`;
     window.location.href = mailtoUrl;
   };
 
