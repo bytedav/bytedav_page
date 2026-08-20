@@ -36,7 +36,7 @@ export const MILESTONES: Milestone[] = [
     quarter: 'Creación,
     title: 'Creaciónde de Kaelos,
     description: 'La mayorplataforma de venta de motos nuevas y ocasión.',
-    highlight: false,
+    highlight: true,
     metricsBadge: 'Kaelos',
   },
 ];
