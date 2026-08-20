@@ -18,7 +18,7 @@ export const PORTFOLIO_BRANDS: PortfolioBrand[] = [
     yearFounded: 2022,
     description: 'Plataforma líder en venta de motocicletas nuevas y ocasion, renting, Tambien brindamos servicios.',
     websiteUrl: 'https://kaelos.com',
-    image: 'https://raw.githubusercontent.com/bytedav/bytedav_page/refs/heads/main/public/kaelos.png?token=GHSAT0AAAAAAEGBHCMWR64UNPOYDCDY2TR42UGTIBQ',
+    image: 'https://raw.githubusercontent.com/bytedav/bytedav_page/refs/heads/main/public/kaelos.png',
   },
 ];
 
@@ -38,11 +38,11 @@ export const LEADERS: Leader[] = [
     id: 'david-bermudez',
     name: 'David Bermudez A.',
     area: 'Fundador y CEO',
-    bio: 'Estratega de negocios y emprendedor en serie con más de 14 años de trayectoria impulsando plataformas tecnológicas en el sector de movilidad e infraestructura de comercio digital.',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
+    bio: 'Estratega de negocios y emprendedor impulsando plataformas tecnológicas en el sector',
+    image: 'https://raw.githubusercontent.com/bytedav/bytedav_page/refs/heads/main/public/david%20bermudez.png',
     linkedin: 'https://linkedin.com',
     email: 'bytedav@gmail.com',
-    specialties: ['Estrategia Corporativa', 'Marketing Digital', 'Ingeniero en Sistemas', 'Crecimiento de Negocios'],
+    specialties: ['Lider', 'Marketing Digital', 'Sistemas', 'Negocios'],
   },
 ];
 
