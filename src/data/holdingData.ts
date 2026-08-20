@@ -16,7 +16,7 @@ export const PORTFOLIO_BRANDS: PortfolioBrand[] = [
     id: 'kaelos',
     name: 'Kaelos',
     yearFounded: 2026,
-    description: 'Plataforma líder en venta de motocicletas nuevas y ocasion, renting, Tambien brindamos servicios.',
+    description: 'La mayorplataforma de venta de motos nuevas y ocasión.',
     websiteUrl: 'https://kaelos.com',
     image: 'https://raw.githubusercontent.com/bytedav/bytedav_page/refs/heads/main/public/kaelos.png',
   },
@@ -33,7 +33,7 @@ export const MILESTONES: Milestone[] = [
   },
   {
     year: '2026',
-    quarter: 'Creación,
+    quarter: 'Creación',
     title: 'Creaciónde de Kaelos,
     description: 'La mayorplataforma de venta de motos nuevas y ocasión.',
     highlight: true,
