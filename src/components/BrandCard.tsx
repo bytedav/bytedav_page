@@ -30,10 +30,7 @@ export const BrandCard: React.FC<BrandCardProps> = ({
 
         {/* Card Header */}
         <div className="mb-2.5 sm:mb-3">
-          <div className="flex items-center justify-between mb-1.5">
-            <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-[#1cb0f6]">
-              {brand.category}
-            </span>
+          <div className="flex items-center justify-end mb-1.5">
             <span className="text-xs sm:text-sm font-bold font-mono text-[#52525b] bg-[#f7f7f7] px-2.5 py-0.5 rounded-lg border border-[#e5e5e5]">
               {brand.yearFounded}
             </span>

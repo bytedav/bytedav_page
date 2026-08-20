@@ -133,9 +133,6 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
                     {/* Header with Badges */}
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5 sm:mb-3.5">
                       <div className="flex items-center gap-2">
-                        <span className={`text-xs sm:text-sm font-black uppercase tracking-wider px-3 py-1 sm:px-3.5 sm:py-1 rounded-xl border ${theme.badgeBg}`}>
-                          {milestone.category}
-                        </span>
                         <span className="font-mono text-xs sm:text-sm font-bold text-[#52525b] bg-[#f7f7f7] border border-[#e5e5e5] px-2.5 py-1 rounded-lg">
                           {milestone.year} {milestone.quarter}
                         </span>
