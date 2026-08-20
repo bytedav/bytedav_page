@@ -18,7 +18,7 @@ export const PORTFOLIO_BRANDS: PortfolioBrand[] = [
     yearFounded: 2022,
     description: 'Plataforma líder en venta de motocicletas nuevas y ocasion, renting, Tambien brindamos servicios.',
     websiteUrl: 'https://kaelos.com',
-    image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://raw.githubusercontent.com/bytedav/bytedav_page/refs/heads/main/public/kaelos.png?token=GHSAT0AAAAAAEGBHCMWR64UNPOYDCDY2TR42UGTIBQ',
   },
 ];
 
