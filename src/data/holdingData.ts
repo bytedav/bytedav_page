@@ -43,8 +43,8 @@ export const MILESTONES: Milestone[] = [
 
 export const LEADERS: Leader[] = [
   {
-    id: 'david-bermudez',
-    name: 'David Bermudez A.',
+    id: 'bytedav',
+    name: 'Bytedav',
     area: 'Fundador y CEO',
     bio: 'Estratega de negocios y emprendedor impulsando plataformas tecnológicas en el sector',
     image: 'https://raw.githubusercontent.com/bytedav/bytedav_page/refs/heads/main/public/david%20bermudez.png',
