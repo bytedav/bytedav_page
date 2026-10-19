@@ -89,7 +89,7 @@ const corporationSchema = {
   founder: {
     '@type': 'Person',
     '@id': `${DOMAIN}/liderazgo#david-bermudez`,
-    name: LEADERS[0]?.name || 'David Bermúdez A.',
+    name: LEADERS[0]?.name || 'bytedav.',
     jobTitle: LEADERS[0]?.area || 'Fundador y CEO',
     url: `${DOMAIN}/liderazgo`,
     image: `${DOMAIN}${LEADERS[0]?.image || '/david bermudez.png'}`,
@@ -160,7 +160,7 @@ const HOME_FAQS: FAQItem[] = [
   {
     question: '¿Qué es Bytedav y cuál es su modelo operativo?',
     answer:
-      'Bytedav es un holding operador tecnológico fundado en 2023 por David Bermúdez A. Estructura, opera y escala marcas tecnológicas enfocadas en la economía real, combinando autonomía operativa para cada unidad con infraestructura tecnológica compartida y disciplina de capital.',
+      'Bytedav es un holding operador tecnológico fundado en 2023 por bytedav. Estructura, opera y escala marcas tecnológicas enfocadas en la economía real, combinando autonomía operativa para cada unidad con infraestructura tecnológica compartida y disciplina de capital.',
   },
   {
     question: '¿Cuáles son las marcas y empresas del portafolio de Bytedav?',
@@ -175,7 +175,7 @@ const HOME_FAQS: FAQItem[] = [
   {
     question: '¿Quién fundó y lidera Bytedav?',
     answer:
-      'Bytedav fue fundado por David Bermúdez A., quien lidera la dirección ejecutiva, la arquitectura técnica de las plataformas y el despliegue estratégico de capital del grupo.',
+      'Bytedav fue fundado por bytedav., quien lidera la dirección ejecutiva, la arquitectura técnica de las plataformas y el despliegue estratégico de capital del grupo.',
   },
 ];
 
@@ -212,9 +212,9 @@ const MARCAS_FAQS: FAQItem[] = [
 
 const LIDERAZGO_FAQS: FAQItem[] = [
   {
-    question: '¿Quién es David Bermúdez A.?',
+    question: '¿Quién es bytedav.?',
     answer:
-      'David Bermúdez A. es el Fundador y CEO de Bytedav. Dirige la estrategia de producto, asignación de capital y arquitectura de software del holding y sus marcas asociadas.',
+      'bytedav. es el Fundador y CEO de Bytedav. Dirige la estrategia de producto, asignación de capital y arquitectura de software del holding y sus marcas asociadas.',
   },
   {
     question: '¿Cómo contactar al equipo directivo de Bytedav para alianzas?',
@@ -342,7 +342,7 @@ export const SEO_CONFIG: Record<PageId, RouteSEO> = {
     path: '/liderazgo',
     title: 'Liderazgo y Equipo Directivo | Bytedav',
     description:
-      'Conoce al equipo directivo de Bytedav liderado por David Bermúdez A., combinando visión estratégica, innovación digital y rigor operativo en cada negocio.',
+      'Conoce al equipo directivo de Bytedav liderado por bytedav., combinando visión estratégica, innovación digital y rigor operativo en cada negocio.',
     keywords:
       'David Bermúdez, CEO Bytedav, directivos Bytedav, liderazgo empresarial, equipo directivo, fundadores de holding',
     author: 'Bytedav',
@@ -371,7 +371,7 @@ export const SEO_CONFIG: Record<PageId, RouteSEO> = {
         mainEntity: {
           '@type': 'Person',
           '@id': `${DOMAIN}/liderazgo#david-bermudez`,
-          name: LEADERS[0]?.name || 'David Bermúdez A.',
+          name: LEADERS[0]?.name || 'bytedav.',
           jobTitle: LEADERS[0]?.area || 'Fundador y CEO',
           description: LEADERS[0]?.bio,
           image: `${DOMAIN}${LEADERS[0]?.image || '/david bermudez.png'}`,
@@ -592,7 +592,7 @@ export function getBlogPostSEO(slug: string): RouteSEO | null {
     title,
     description: post.description,
     keywords: `Bytedav, ${post.title.toLowerCase()}, tesis holding, tecnología economía real, David Bermúdez`,
-    author: post.author || 'David Bermúdez A.',
+    author: post.author || 'bytedav.',
     canonicalUrl,
     ogImage: DEFAULT_OG_IMAGE,
     ogImageWidth: 1200,
@@ -620,7 +620,7 @@ export function getBlogPostSEO(slug: string): RouteSEO | null {
         inLanguage: 'es',
         author: {
           '@type': 'Person',
-          name: post.author || 'David Bermúdez A.',
+          name: post.author || 'bytedav.',
         },
         publisher: {
           '@id': `${DOMAIN}/#corporation`,

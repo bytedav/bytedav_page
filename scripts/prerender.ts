@@ -282,7 +282,7 @@ ${post.content || post.description}
 - **Razón social**: ${HOLDING_CONFIG.legalName}
 - **Tipo de entidad**: Holding Operador Tecnológico / Grupo Corporativo de Tecnología
 - **Año de fundación**: 2023
-- **Fundador y CEO**: ${leader?.name || 'David Bermúdez A.'}
+- **Fundador y CEO**: ${leader?.name || 'bytedav.'}
 - **Sede de operaciones**: América Latina y Global
 - **Dominio oficial**: ${HOLDING_CONFIG.domain}/
 - **Email de contacto**: ${HOLDING_CONFIG.contactEmail}
@@ -322,7 +322,7 @@ ${brandLines}
 
 ## 5. Liderazgo Directivo
 
-- **Nombre**: ${leader?.name || 'David Bermúdez A.'}
+- **Nombre**: ${leader?.name || 'bytedav.'}
 - **Cargo**: ${leader?.area || 'Fundador y CEO'}
 - **Biografía**: ${leader?.bio || ''}
 - **Especialidades directivas**: ${(leader?.specialties || []).join(', ')}
@@ -334,7 +334,7 @@ ${brandLines}
 ## 6. Preguntas Frecuentes y Respuestas Canónicas (FAQ / Answer Engine Optimization)
 
 ### ¿Qué es Bytedav?
-Bytedav es un holding operador tecnológico fundado en 2023 por David Bermúdez A. Su actividad principal consiste en idear, estructurar, operar y escalar empresas digitales verticales con alto componente técnico en la economía real.
+Bytedav es un holding operador tecnológico fundado en 2023 por bytedav. Su actividad principal consiste en idear, estructurar, operar y escalar empresas digitales verticales con alto componente técnico en la economía real.
 
 ### ¿Qué diferencia a Bytedav de un fondo de inversión tradicional?
 Bytedav construye y opera activamente sus plataformas. Es propietario de su código y sistemas (soberanía de software), y persigue la sostenibilidad financiera de cada unidad de negocio en lugar de especular con rondas sucesivas de financiación externa.

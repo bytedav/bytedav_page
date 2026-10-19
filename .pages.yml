@@ -187,7 +187,7 @@ content:
         label: Fecha de Publicación (Opcional, por defecto hoy)
         type: date
       - name: author
-        label: Autor (Opcional, por defecto David Bermúdez A.)
+        label: Autor (Opcional, por defecto bytedav.)
         type: string
       - name: content
         label: Contenido del Artículo (Opcional)

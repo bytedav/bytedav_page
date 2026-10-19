@@ -40,7 +40,7 @@ export function normalizeBlogPost(raw: Partial<BlogPost> & { title: string; desc
   const slug = raw.slug || id;
   const date = raw.date || new Date().toISOString().split('T')[0];
   const readTime = raw.readTime || calculateReadingTime(content, description);
-  const author = raw.author || 'David Bermúdez A.';
+  const author = raw.author || 'bytedav.';
 
   return {
     id,

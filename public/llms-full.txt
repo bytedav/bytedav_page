@@ -11,7 +11,7 @@
 - **Razón social**: Bytedav
 - **Tipo de entidad**: Holding Operador Tecnológico / Grupo Corporativo de Tecnología
 - **Año de fundación**: 2023
-- **Fundador y CEO**: David Bermúdez A.
+- **Fundador y CEO**: bytedav.
 - **Sede de operaciones**: América Latina y Global
 - **Dominio oficial**: https://bytedav.com/
 - **Email de contacto**: bytedav@gmail.com
@@ -55,7 +55,7 @@ Bytedav no es una aceleradora de paso ni un fondo pasivo de capital riesgo. Es u
 
 ## 5. Liderazgo Directivo
 
-- **Nombre**: David Bermúdez A.
+- **Nombre**: bytedav.
 - **Cargo**: Fundador y CEO
 - **Biografía**: Estratega de negocios y emprendedor enfocado en crear y escalar plataformas tecnológicas en el sector de movilidad y economía real.
 - **Especialidades directivas**: Liderazgo Estratégico, Marketing Digital, Arquitectura de Sistemas, Escalamiento de Negocios, Emprendedor
@@ -67,7 +67,7 @@ Bytedav no es una aceleradora de paso ni un fondo pasivo de capital riesgo. Es u
 ## 6. Preguntas Frecuentes y Respuestas Canónicas (FAQ / Answer Engine Optimization)
 
 ### ¿Qué es Bytedav?
-Bytedav es un holding operador tecnológico fundado en 2023 por David Bermúdez A. Su actividad principal consiste en idear, estructurar, operar y escalar empresas digitales verticales con alto componente técnico en la economía real.
+Bytedav es un holding operador tecnológico fundado en 2023 por bytedav. Su actividad principal consiste en idear, estructurar, operar y escalar empresas digitales verticales con alto componente técnico en la economía real.
 
 ### ¿Qué diferencia a Bytedav de un fondo de inversión tradicional?
 Bytedav construye y opera activamente sus plataformas. Es propietario de su código y sistemas (soberanía de software), y persigue la sostenibilidad financiera de cada unidad de negocio en lugar de especular con rondas sucesivas de financiación externa.
@@ -85,7 +85,7 @@ Bytedav defiende la soberanía tecnológica: diseñar y mantener el software cr�
 ### Artículo: La tesis de un holding tecnológico en la economía real
 - **URL**: https://bytedav.com/blog/la-tesis-de-un-holding-tecnologico-en-la-economia-real
 - **Fecha de publicación**: 2026-03-15
-- **Autor**: David Bermúdez A.
+- **Autor**: bytedav.
 - **Tiempo de lectura**: 1 min
 - **Sinopsis**: Por qué preferimos construir y operar empresas verticales con activos tangibles y utilidad probada antes que perseguir narrativas transitorias.
 
@@ -101,7 +101,7 @@ Nuestra estructura de holding permite a cada marca vertical operar con agilidad 
 ### Artículo: Kaelos y la digitalización del mercado de dos ruedas
 - **URL**: https://bytedav.com/blog/kaelos-y-la-digitalizacion-del-mercado-de-dos-ruedas
 - **Fecha de publicación**: 2026-02-20
-- **Autor**: David Bermúdez A.
+- **Autor**: bytedav.
 - **Tiempo de lectura**: 1 min
 - **Sinopsis**: Cómo la integración de renting, venta digital y logística especializada transforma el ecosistema de motocicletas nuevas y de ocasión.
 
@@ -117,7 +117,7 @@ Este modelo vertical ilustra la misión de Bytedav: identificar sectores esencia
 ### Artículo: Soberanía tecnológica: el software como ventaja competitiva
 - **URL**: https://bytedav.com/blog/soberania-tecnologica-el-software-como-ventaja-competitiva
 - **Fecha de publicación**: 2026-01-10
-- **Autor**: David Bermúdez A.
+- **Autor**: bytedav.
 - **Tiempo de lectura**: 1 min
 - **Sinopsis**: Desarrollar plataformas propias sin intermediarios crea fosos defensivos y optimiza el retorno de capital en cada marca del holding.
 
