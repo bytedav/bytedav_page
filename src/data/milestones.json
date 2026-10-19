@@ -4,15 +4,23 @@
     "quarter": "Fundación",
     "title": "Constitución de Bytedav",
     "description": "Nacimiento de Bytedav como holding operador tecnológico para estructurar, operar y potenciar marcas especializadas.",
-    "highlight": true,
-    "metricsBadge": "Bytedav"
+    "metricsBadge": "Bytedav",
+    "highlight": true
   },
   {
     "year": "2026",
     "quarter": "Incubación",
     "title": "Lanzamiento de Kaelos",
     "description": "Primera incubación vertical de Bytedav enfocada en la digitalización integral del sector de motocicletas.",
-    "highlight": true,
-    "metricsBadge": "Kaelos"
+    "metricsBadge": "Kaelos",
+    "highlight": true
+  },
+  {
+    "year": "2026",
+    "quarter": "Mejoramiento",
+    "title": "Sistemas operativos de bytedav",
+    "description": "mejoramos la bytedav para poder tener mas rapidez en los casos de uso buscando la modernizacion",
+    "metricsBadge": "ByteDav",
+    "highlight": false
   }
 ]
