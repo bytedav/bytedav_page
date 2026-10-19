@@ -240,7 +240,7 @@ content:
       - name: author
         label: Autor (Opcional, por defecto bytedav.)
         type: string
-        default: bytedav.
+        default: bytedav
       - name: content
         label: Contenido del Artículo (Opcional)
         type: text
