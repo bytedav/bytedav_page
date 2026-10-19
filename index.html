@@ -3,57 +3,137 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bytedav | Innovación e Impulso Empresarial</title>
-    <meta name="description" content="Sitio web corporativo de Bytedav, operador de marcas líderes." />
-    <meta property="og:title" content="Bytedav" />
-    <meta property="og:description" content="Sitio web corporativo de Bytedav, operador de marcas líderes." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://raw.githubusercontent.com/bytedav/bytedav_page/refs/heads/main/public/bytedav.png" />
-    <meta property="og:image:width" content="1254" />
-    <meta property="og:image:height" content="1254" />
-    <meta property="og:url" content="https://bytedav.com/" />
-    <meta property="og:site_name" content="Bytedav" />
+    <title>Bytedav | Holding Operador de Marcas Tecnológicas</title>
+    <meta name="description" content="Bytedav es un holding tecnológico operador de plataformas líderes como Kaelos. Impulsamos la innovación y el comercio especializado con rigor de capital." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
     <!-- Canonical Link -->
     <link rel="canonical" href="https://bytedav.com/" />
 
-    <!-- Favicon & Touch Icons -->
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/bytedav/bytedav_page/refs/heads/main/public/bytedav.png" />
-    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/bytedav/bytedav_page/refs/heads/main/public/bytedav.png" />
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bytedav | Holding Operador de Marcas Tecnológicas" />
+    <meta property="og:description" content="Bytedav es un holding tecnológico operador de plataformas líderes como Kaelos. Impulsamos la innovación y el comercio especializado con rigor de capital." />
+    <meta property="og:url" content="https://bytedav.com/" />
+    <meta property="og:site_name" content="Bytedav" />
+    <meta property="og:locale" content="es_LA" />
+    <meta property="og:image" content="https://bytedav.com/bytedav.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
 
-    <!-- Twitter Card Meta Tags -->
+    <!-- Twitter / X Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Bytedav" />
-    <meta name="twitter:description" content="Bytedav" />
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/bytedav/bytedav_page/refs/heads/main/public/bytedav.png" />
+    <meta name="twitter:title" content="Bytedav | Holding Operador de Marcas Tecnológicas" />
+    <meta name="twitter:description" content="Bytedav es un holding tecnológico operador de plataformas líderes como Kaelos. Impulsamos la innovación y el comercio especializado con rigor de capital." />
+    <meta name="twitter:image" content="https://bytedav.com/bytedav.png" />
 
-    <!-- Structured Data (JSON-LD) for Search Engines & AI Assistants -->
-    <script type="application/ld+json">
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/png" href="/bytedav.png" />
+    <link rel="apple-touch-icon" href="/bytedav.png" />
+
+    <!-- Structured Data (JSON-LD) for Search Engines & AI Crawlers -->
+    <script type="application/ld+json" id="seo-jsonld">
     {
       "@context": "https://schema.org",
-      "@type": "Corporation",
-      "name": "Bytedav",
-      "url": "https://bytedav.com/",
-      "logo": "https://raw.githubusercontent.com/bytedav/bytedav_page/refs/heads/main/public/bytedav.png",
-      "image": "https://raw.githubusercontent.com/bytedav/bytedav_page/refs/heads/main/public/bytedav.png",
-      "description": "Bytedav",
-      "email": "bytedav@gmail.com",
-      "sameAs": [
-        "https://facebook.com/bytedav",
-        "https://tiktok.com/@bytedav",
-        "https://instagram.com/bytedav",
-        "https://youtube.com/@bytedav"
+      "@graph": [
+        {
+          "@type": "Corporation",
+          "@id": "https://bytedav.com/#corporation",
+          "name": "Bytedav",
+          "legalName": "Bytedav",
+          "url": "https://bytedav.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://bytedav.com/bytedav.png",
+            "width": 1200,
+            "height": 630
+          },
+          "image": "https://bytedav.com/bytedav.png",
+          "description": "Bytedav es un holding operador tecnológico que estructura, opera y escala marcas especializadas de alto impacto en la economía real.",
+          "email": "bytedav@gmail.com",
+          "foundingDate": "2023",
+          "sameAs": [
+            "https://linkedin.com/company/bytedav",
+            "https://facebook.com/bytedav",
+            "https://instagram.com/bytedav",
+            "https://tiktok.com/@bytedav",
+            "https://youtube.com/@bytedav"
+          ],
+          "founder": {
+            "@type": "Person",
+            "name": "David Bermúdez A.",
+            "jobTitle": "Fundador y CEO",
+            "url": "https://bytedav.com/liderazgo",
+            "sameAs": [
+              "https://linkedin.com/in/davidbermudeza",
+              "mailto:bytedav@gmail.com"
+            ]
+          },
+          "subOrganization": [
+            {
+              "@type": "Organization",
+              "name": "Kaelos",
+              "url": "https://kaelos.com",
+              "description": "La mayor plataforma de venta de motos nuevas y de ocasión, renting y servicios de movilidad.",
+              "foundingDate": "2026"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://bytedav.com/#website",
+          "url": "https://bytedav.com/",
+          "name": "Bytedav",
+          "publisher": {
+            "@id": "https://bytedav.com/#corporation"
+          },
+          "inLanguage": "es"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inicio",
+              "item": "https://bytedav.com/"
+            }
+          ]
+        }
       ]
     }
     </script>
+
     <!-- Google Fonts: Outfit, Nunito, Inter, JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   </head>
   <body class="bg-[#f7f7f7] text-[#3c3c3c] font-sans antialiased selection:bg-[#58cc02] selection:text-white">
+    <noscript>
+      <div style="padding: 24px; font-family: sans-serif; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+        <h1>Bytedav — Holding Operador de Marcas Tecnológicas</h1>
+        <p>Impulsando el futuro del comercio especializado y la economía real. Operamos con un modelo de autonomía operativa, infraestructura tecnológica compartida y disciplina de capital.</p>
+        <h2>Marcas del Portafolio</h2>
+        <ul>
+          <li><a href="https://kaelos.com"><strong>Kaelos</strong></a>: La mayor plataforma de venta de motos nuevas y de ocasión, renting y servicios de movilidad (2026).</li>
+        </ul>
+        <h2>Pilares Estratégicos</h2>
+        <ul>
+          <li>Autonomía Operativa con Respaldo Central</li>
+          <li>Sinergia de Ecosistema</li>
+          <li>Infraestructura Tecnológica Compartida</li>
+          <li>Gobernanza y Disciplina de Capital</li>
+        </ul>
+        <nav>
+          <a href="/historia">Nuestra Historia</a> |
+          <a href="/liderazgo">Liderazgo y Equipo Directivo</a> |
+          <a href="/marcas">Marcas del Portafolio</a>
+        </nav>
+      </div>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

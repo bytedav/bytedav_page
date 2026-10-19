@@ -1,4 +1,4 @@
-export type PageId = 'home' | 'historia' | 'liderazgo' | 'marcas';
+export type PageId = 'home' | 'historia' | 'liderazgo' | 'marcas' | '404';
 
 export interface PortfolioBrand {
   id: string;

@@ -15,10 +15,13 @@ export const LeaderCard: React.FC<LeaderCardProps> = ({ leader }) => {
       <div className="w-full md:w-80 lg:w-96 shrink-0 aspect-[4/3] md:aspect-[4/5] rounded-2xl overflow-hidden bg-slate-100 relative border-2 border-[#e5e5e5]">
         <img
           src={leader.image}
-          alt={leader.name}
+          alt={`${leader.name} — ${leader.area} de Bytedav`}
+          width="400"
+          height="500"
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           referrerPolicy="no-referrer"
           loading="lazy"
+          decoding="async"
         />
       </div>
 

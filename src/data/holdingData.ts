@@ -1,70 +1,13 @@
+import holdingConfigData from './holding.json';
+import brandsData from './brands.json';
+import milestonesData from './milestones.json';
+import leadersData from './leaders.json';
+import pillarsData from './pillars.json';
+
 import { PortfolioBrand, Milestone, Leader, HoldingPillar } from '../types';
 
-export const HOLDING_CONFIG = {
-  name: 'Bytedav',
-  contactEmail: 'bytedav@gmail.com',
-  socialLinks: {
-    facebook: 'https://facebook.com/bytedav',
-    tiktok: 'https://tiktok.com/@bytedav',
-    instagram: 'https://instagram.com/bytedav',
-    youtube: 'https://youtube.com/@bytedav',
-  },
-};
-
-export const PORTFOLIO_BRANDS: PortfolioBrand[] = [
-  {
-    id: 'kaelos',
-    name: 'Kaelos',
-    yearFounded: 2026,
-    description: 'La mayor plataforma de venta de motos nuevas y ocasión.',
-    websiteUrl: 'https://kaelos.com',
-    image: 'https://raw.githubusercontent.com/bytedav/bytedav_page/refs/heads/main/public/kaelos.png',
-  },
-];
-
-export const MILESTONES: Milestone[] = [
-  {
-    year: '2023',
-    quarter: 'Fundación',
-    title: 'Constitución de Bytedav',
-    description: 'Nacimiento de Bytedav como empresa para controlar todos nuestras marcas.',
-    highlight: true,
-    metricsBadge: 'Bytedav',
-  },
-  {
-    year: '2026',
-    quarter: 'Incubación',
-    title: 'Kaelos',
-    description: '1ra Incubación en el sector de motocicletas',
-    highlight: true,
-    metricsBadge: 'Kaelos',
-  },
-];
-
-export const LEADERS: Leader[] = [
-  {
-    id: 'bytedav',
-    name: 'Bytedav',
-    area: 'Fundador y CEO',
-    bio: 'Estratega de negocios y emprendedor impulsando plataformas tecnológicas en el sector',
-    image: 'https://raw.githubusercontent.com/bytedav/bytedav_page/refs/heads/main/public/david%20bermudez.png',
-    linkedin: 'https://linkedin.com',
-    email: 'bytedav@gmail.com',
-    specialties: ['Lider', 'Marketing Digital', 'Sistemas', 'Negocios'],
-  },
-];
-
-export const HOLDING_PILLARS: HoldingPillar[] = [
-  {
-    title: 'Autonomía Operativa con Respaldo Central',
-  },
-  {
-    title: 'Sinergia de Ecosistema',
-  },
-  {
-    title: 'Infraestructura Tecnológica Compartida',
-  },
-  {
-    title: 'Gobernanza y Disciplina de Capital',
-  },
-];
+export const HOLDING_CONFIG = holdingConfigData;
+export const PORTFOLIO_BRANDS: PortfolioBrand[] = brandsData as PortfolioBrand[];
+export const MILESTONES: Milestone[] = milestonesData as Milestone[];
+export const LEADERS: Leader[] = leadersData as Leader[];
+export const HOLDING_PILLARS: HoldingPillar[] = pillarsData as HoldingPillar[];

@@ -1,72 +1,100 @@
 import { useEffect } from 'react';
 import { PageId } from '../types';
+import { SEO_CONFIG, RouteSEO } from '../seo/seoConfig';
 
-interface PageSEO {
-  title: string;
-  description: string;
-  url: string;
-}
+const ensureMetaTag = (attributeName: 'name' | 'property', attributeValue: string): HTMLMetaElement => {
+  const selector = `meta[${attributeName}="${attributeValue}"]`;
+  let element = document.querySelector(selector) as HTMLMetaElement | null;
+  if (!element) {
+    element = document.createElement('meta');
+    element.setAttribute(attributeName, attributeValue);
+    document.head.appendChild(element);
+  }
+  return element;
+};
 
-const SEO_MAP: Record<PageId, PageSEO> = {
-  home: {
-    title: 'Bytedav',
-    description: 'Conoce Bytedav, holding tecnológico operador de plataformas líderes. Innovación, estrategia y valor real.',
-    url: 'https://bytedav.com/',
-  },
-  historia: {
-    title: 'Nuestra Historia y Trayectoria | Bytedav',
-    description: 'Descubre los orígenes, hitos fundacionales y pilares de Bytedav. Construimos soluciones de tecnología con soberanía técnica y disciplina de capital.',
-    url: 'https://bytedav.com/historia',
-  },
-  liderazgo: {
-    title: 'Equipo y Liderazgo Directivo | Bytedav',
-    description: 'Conoce el equipo directivo de Bytedav encabezado por David Bermúdez A., impulsando plataformas digitales con enfoque en estrategia y tecnología.',
-    url: 'https://bytedav.com/liderazgo',
-  },
-  marcas: {
-    title: 'Nuestras Marcas y Ecosistema | Bytedav',
-    description: 'Explora el portafolio de marcas de Bytedav, incluyendo Kaelos: plataforma líder en venta de motos nuevas y de ocasión, renting y servicios.',
-    url: 'https://bytedav.com/marcas',
-  },
+const setMetaContent = (attributeName: 'name' | 'property', attributeValue: string, content: string | undefined) => {
+  if (content === undefined) return;
+  const element = ensureMetaTag(attributeName, attributeValue);
+  element.setAttribute('content', content);
+};
+
+const ensureCanonicalLink = (href: string) => {
+  let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+  if (!link) {
+    link = document.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    document.head.appendChild(link);
+  }
+  link.setAttribute('href', href);
 };
 
 export function useSEO(currentPage: PageId) {
   useEffect(() => {
-    const seo = SEO_MAP[currentPage] || SEO_MAP.home;
+    if (typeof document === 'undefined') return;
 
-    // Update document title
+    const seo: RouteSEO = SEO_CONFIG[currentPage] || SEO_CONFIG['404'];
+
+    // 1. Document Title
     document.title = seo.title;
 
-    // Helper to update or create meta tags
-    const updateMeta = (selector: string, attribute: 'name' | 'property', name: string, content: string) => {
-      let element = document.querySelector(selector);
-      if (!element) {
-        element = document.createElement('meta');
-        element.setAttribute(attribute, name);
-        document.head.appendChild(element);
-      }
-      element.setAttribute('content', content);
-    };
+    // 2. Standard Meta Tags
+    setMetaContent('name', 'description', seo.description);
+    setMetaContent('name', 'robots', seo.robots);
 
-    // Update standard meta description
-    updateMeta('meta[name="description"]', 'name', 'description', seo.description);
-
-    // Update Open Graph tags
-    updateMeta('meta[property="og:title"]', 'property', 'og:title', seo.title);
-    updateMeta('meta[property="og:description"]', 'property', 'og:description', seo.description);
-    updateMeta('meta[property="og:url"]', 'property', 'og:url', seo.url);
-
-    // Update Twitter tags
-    updateMeta('meta[name="twitter:title"]', 'name', 'twitter:title', seo.title);
-    updateMeta('meta[name="twitter:description"]', 'name', 'twitter:description', seo.description);
-
-    // Update Canonical URL
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
+    // 3. OpenGraph Tags
+    setMetaContent('property', 'og:title', seo.title);
+    setMetaContent('property', 'og:description', seo.description);
+    setMetaContent('property', 'og:url', seo.canonicalUrl);
+    setMetaContent('property', 'og:image', seo.ogImage);
+    setMetaContent('property', 'og:type', seo.ogType);
+    setMetaContent('property', 'og:site_name', seo.siteName);
+    setMetaContent('property', 'og:locale', seo.ogLocale);
+    if (seo.ogImageWidth) {
+      setMetaContent('property', 'og:image:width', seo.ogImageWidth.toString());
     }
-    canonicalLink.setAttribute('href', seo.url);
+    if (seo.ogImageHeight) {
+      setMetaContent('property', 'og:image:height', seo.ogImageHeight.toString());
+    }
+    if (seo.ogImageType) {
+      setMetaContent('property', 'og:image:type', seo.ogImageType);
+    }
+
+    // 4. Twitter Card Tags
+    setMetaContent('name', 'twitter:card', seo.twitterCard);
+    setMetaContent('name', 'twitter:title', seo.title);
+    setMetaContent('name', 'twitter:description', seo.description);
+    setMetaContent('name', 'twitter:image', seo.ogImage);
+
+    // 5. Canonical Link
+    ensureCanonicalLink(seo.canonicalUrl);
+
+    // 6. Schema.org Structured Data (JSON-LD)
+    const JSON_LD_ID = 'seo-jsonld';
+    let scriptElement = document.getElementById(JSON_LD_ID) as HTMLScriptElement | null;
+
+    if (!scriptElement) {
+      scriptElement = document.createElement('script');
+      scriptElement.id = JSON_LD_ID;
+      scriptElement.type = 'application/ld+json';
+      document.head.appendChild(scriptElement);
+    }
+
+    if (seo.jsonLd && seo.jsonLd.length > 0) {
+      const payload =
+        seo.jsonLd.length === 1
+          ? seo.jsonLd[0]
+          : {
+              '@context': 'https://schema.org',
+              '@graph': seo.jsonLd.map((item) => {
+                const copy = { ...item };
+                delete copy['@context'];
+                return copy;
+              }),
+            };
+      scriptElement.textContent = JSON.stringify(payload);
+    } else {
+      scriptElement.textContent = '';
+    }
   }, [currentPage]);
 }

@@ -33,7 +33,11 @@ export const BytedavLogo: React.FC<BytedavLogoProps> = ({
       >
         <img
           src="/bytedav.png"
-          alt="Bytedav Logo"
+          alt="Logotipo corporativo de Bytedav - Grupo Holding"
+          width="48"
+          height="48"
+          loading="eager"
+          decoding="async"
           className="w-full h-full object-contain rounded-xl"
         />
       </div>

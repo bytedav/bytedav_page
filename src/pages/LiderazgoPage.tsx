@@ -9,7 +9,7 @@ export const LiderazgoPage: React.FC = () => {
       <section className="w-full px-3.5 sm:px-8 max-w-7xl mx-auto pt-4 sm:pt-8">
         <div className="bg-[#ff9600] border-b-6 border-[#e58700] rounded-3xl sm:rounded-4xl p-6 sm:p-12 text-white shadow-md">
           <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight font-display leading-[1.1]">
-            Quien firma cada decisión.
+            Liderazgo estratégico y dirección de impacto.
           </h1>
         </div>
       </section>

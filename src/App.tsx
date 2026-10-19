@@ -8,6 +8,7 @@ import { HomePage } from './pages/HomePage';
 import { HistoriaPage } from './pages/HistoriaPage';
 import { LiderazgoPage } from './pages/LiderazgoPage';
 import { MarcasPage } from './pages/MarcasPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
@@ -17,23 +18,27 @@ export default function App() {
 
   // Parse path to PageId and clean any legacy hash in browser URL
   const getPageFromPath = (): PageId => {
-    let targetPage: PageId = 'home';
-
     if (window.location.hash) {
       const cleanHash = window.location.hash.replace('#/', '').replace('#', '').trim();
+      let targetPage: PageId = 'home';
       if (['home', 'historia', 'liderazgo', 'marcas'].includes(cleanHash)) {
         targetPage = cleanHash as PageId;
+      } else if (cleanHash) {
+        targetPage = '404';
       }
       const cleanPath = targetPage === 'home' ? '/' : `/${targetPage}`;
       window.history.replaceState(null, '', cleanPath);
       return targetPage;
     }
 
-    const path = window.location.pathname.replace('/', '').trim();
-    if (['home', 'historia', 'liderazgo', 'marcas'].includes(path)) {
-      return path as PageId;
+    const rawPath = window.location.pathname.replace(/^\/+|\/+$/g, '').trim();
+    if (!rawPath || rawPath === 'home') {
+      return 'home';
     }
-    return 'home';
+    if (['historia', 'liderazgo', 'marcas'].includes(rawPath)) {
+      return rawPath as PageId;
+    }
+    return '404';
   };
 
   useEffect(() => {
@@ -70,6 +75,7 @@ export default function App() {
         {currentPage === 'historia' && <HistoriaPage onNavigate={navigateTo} />}
         {currentPage === 'liderazgo' && <LiderazgoPage />}
         {currentPage === 'marcas' && <MarcasPage />}
+        {currentPage === '404' && <NotFoundPage onNavigate={navigateTo} />}
       </main>
 
       {/* Corporate Duolingo Footer */}

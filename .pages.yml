@@ -1,0 +1,174 @@
+# Pages CMS Configuration (https://pagescms.org)
+# Configuración para el repositorio bytedav/bytedav_page
+
+settings:
+  title: Bytedav CMS
+
+media:
+  input: public
+  output: /
+  categories:
+    - image
+
+content:
+  - name: holding
+    label: Configuración del Holding
+    type: file
+    path: src/data/holding.json
+    format: json
+    fields:
+      - name: name
+        label: Nombre Comercial
+        type: string
+        required: true
+      - name: legalName
+        label: Razón Social / Nombre Legal
+        type: string
+        required: true
+      - name: tagline
+        label: Lema / Tagline
+        type: string
+        required: true
+      - name: domain
+        label: Dominio Web Canónico
+        type: string
+        required: true
+      - name: contactEmail
+        label: Correo de Contacto Corporativo
+        type: string
+        required: true
+      - name: logoUrl
+        label: URL del Logotipo Oficial
+        type: string
+        required: true
+      - name: socialLinks
+        label: Redes Sociales Oficiales
+        type: object
+        fields:
+          - name: linkedin
+            label: LinkedIn Corporativo
+            type: string
+          - name: facebook
+            label: Facebook
+            type: string
+          - name: tiktok
+            label: TikTok
+            type: string
+          - name: instagram
+            label: Instagram
+            type: string
+          - name: youtube
+            label: YouTube
+            type: string
+
+  - name: brands
+    label: Marcas del Portafolio
+    type: file
+    path: src/data/brands.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: Identificador Único (slug)
+        type: string
+        required: true
+      - name: name
+        label: Nombre de la Marca
+        type: string
+        required: true
+      - name: yearFounded
+        label: Año de Lanzamiento / Incubación
+        type: number
+        required: true
+      - name: description
+        label: Descripción de la Plataforma
+        type: text
+        required: true
+      - name: websiteUrl
+        label: Enlace al Sitio Web Oficial
+        type: string
+        required: true
+      - name: image
+        label: Imagen / Logotipo
+        type: image
+        required: true
+
+  - name: milestones
+    label: Hitos y Trayectoria
+    type: file
+    path: src/data/milestones.json
+    format: json
+    list: true
+    fields:
+      - name: year
+        label: Año
+        type: string
+        required: true
+      - name: quarter
+        label: Periodo / Hito (ej. Fundación, Incubación)
+        type: string
+        required: true
+      - name: title
+        label: Título del Hito
+        type: string
+        required: true
+      - name: description
+        label: Descripción Detallada
+        type: text
+        required: true
+      - name: metricsBadge
+        label: Insignia / Badge
+        type: string
+      - name: highlight
+        label: Destacar con Corona (Hito Clave)
+        type: boolean
+
+  - name: leaders
+    label: Equipo Directivo
+    type: file
+    path: src/data/leaders.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: Identificador Único
+        type: string
+        required: true
+      - name: name
+        label: Nombre Completo
+        type: string
+        required: true
+      - name: area
+        label: Cargo / Posición
+        type: string
+        required: true
+      - name: bio
+        label: Biografía y Trayectoria
+        type: text
+        required: true
+      - name: image
+        label: Fotografía Oficial
+        type: image
+        required: true
+      - name: email
+        label: Correo Electrónico
+        type: string
+      - name: linkedin
+        label: Enlace de LinkedIn
+        type: string
+      - name: specialties
+        label: Especialidades / Áreas de Dominio
+        type: string
+        list: true
+
+  - name: pillars
+    label: Pilares Estratégicos
+    type: file
+    path: src/data/pillars.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Título del Pilar
+        type: string
+        required: true
