@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { SEO_CONFIG, SITEMAP_ROUTES, RouteSEO } from '../src/seo/seoConfig.js';
-import { HOLDING_CONFIG, PORTFOLIO_BRANDS, LEADERS, MILESTONES, HOLDING_PILLARS } from '../src/data/holdingData.js';
+import { SEO_CONFIG, SITEMAP_ROUTES, RouteSEO, getBlogPostSEO } from '../src/seo/seoConfig.js';
+import { HOLDING_CONFIG, PORTFOLIO_BRANDS, LEADERS, MILESTONES, HOLDING_PILLARS, BLOG_POSTS } from '../src/data/holdingData.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -174,6 +174,11 @@ ${brandLines}
 - [Historia y Trayectoria](${HOLDING_CONFIG.domain}/historia): Origen, hitos fundacionales de ${HOLDING_CONFIG.name} y pilares estratégicos de operación.
 - [Liderazgo Directivo](${HOLDING_CONFIG.domain}/liderazgo): Perfil de la dirección general (${leader?.name}) y áreas de especialidad.
 - [Marcas](${HOLDING_CONFIG.domain}/marcas): Ecosistema y plataformas operadas por el holding.
+- [Blog](${HOLDING_CONFIG.domain}/blog): Ideas, análisis y perspectivas sobre tecnología y modelos de negocio en la economía real.
+
+## Artículos del Blog
+
+${BLOG_POSTS.map((p) => `- [${p.title}](${HOLDING_CONFIG.domain}/blog/${p.slug || p.id}): ${p.description}`).join('\n')}
 
 ## Pilares Estratégicos
 
@@ -220,7 +225,28 @@ export function runPrerender() {
     fs.writeFileSync(path.join(marcasDir, 'index.html'), marcasHtml, 'utf-8');
     console.log('✅ Generated dist/marcas/index.html');
 
-    // 5. 404
+    // 5. Blog Index
+    const blogDir = path.join(distDir, 'blog');
+    fs.mkdirSync(blogDir, { recursive: true });
+    const blogHtml = generatePageHtml(baseHtml, SEO_CONFIG.blog);
+    fs.writeFileSync(path.join(blogDir, 'index.html'), blogHtml, 'utf-8');
+    console.log('✅ Generated dist/blog/index.html');
+
+    // 5.1 Dynamic Blog Post Pages (/blog/:slug)
+    for (const post of BLOG_POSTS) {
+      const postSlug = post.slug || post.id;
+      if (!postSlug) continue;
+      const postSeo = getBlogPostSEO(postSlug);
+      if (postSeo) {
+        const postDir = path.join(blogDir, postSlug);
+        fs.mkdirSync(postDir, { recursive: true });
+        const postHtml = generatePageHtml(baseHtml, postSeo);
+        fs.writeFileSync(path.join(postDir, 'index.html'), postHtml, 'utf-8');
+        console.log(`✅ Generated dist/blog/${postSlug}/index.html with dynamic SEO`);
+      }
+    }
+
+    // 6. 404
     const notFoundHtml = generatePageHtml(baseHtml, SEO_CONFIG['404']);
     fs.writeFileSync(path.join(distDir, '404.html'), notFoundHtml, 'utf-8');
     console.log('✅ Generated dist/404.html with noindex');

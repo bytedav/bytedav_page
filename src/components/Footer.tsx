@@ -30,6 +30,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               { id: 'historia' as const, label: 'Historia' },
               { id: 'liderazgo' as const, label: 'Liderazgo' },
               { id: 'marcas' as const, label: 'Marcas' },
+              { id: 'blog' as const, label: 'Blog' },
             ].map((item) => (
               <button
                 key={item.id}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PageId } from '../types';
 import { BytedavLogo } from './BytedavLogo';
-import { Home, BookOpen, Users, LayoutGrid } from 'lucide-react';
+import { Home, BookOpen, Users, LayoutGrid, Newspaper } from 'lucide-react';
 
 interface HeaderProps {
   currentPage: PageId;
@@ -33,6 +33,7 @@ export const Header: React.FC<HeaderProps> = ({
     { id: 'historia', label: 'Historia', icon: <BookOpen className="w-4 h-4" /> },
     { id: 'liderazgo', label: 'Liderazgo', icon: <Users className="w-4 h-4" /> },
     { id: 'marcas', label: 'Marcas', icon: <LayoutGrid className="w-4 h-4" /> },
+    { id: 'blog', label: 'Blog', icon: <Newspaper className="w-4 h-4" /> },
   ];
 
   const handleNavClick = (id: PageId) => {

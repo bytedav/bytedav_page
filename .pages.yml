@@ -1,5 +1,6 @@
 # Pages CMS Configuration (https://pagescms.org)
-# Configuración para el repositorio bytedav/bytedav_page
+# Configuración optimizada: los campos técnicos (slugs, IDs, tiempo de lectura, URLs derivadas)
+# son calculados dinámicamente por la aplicación y no requieren entrada manual.
 
 settings:
   title: Bytedav CMS
@@ -11,6 +12,7 @@ media:
     - image
 
 content:
+  # 1. Configuración General del Holding
   - name: holding
     label: Configuración del Holding
     type: file
@@ -37,10 +39,6 @@ content:
         label: Correo de Contacto Corporativo
         type: string
         required: true
-      - name: logoUrl
-        label: URL del Logotipo Oficial
-        type: string
-        required: true
       - name: socialLinks
         label: Redes Sociales Oficiales
         type: object
@@ -61,6 +59,7 @@ content:
             label: YouTube
             type: string
 
+  # 2. Marcas del Portafolio
   - name: brands
     label: Marcas del Portafolio
     type: file
@@ -68,10 +67,6 @@ content:
     format: json
     list: true
     fields:
-      - name: id
-        label: Identificador Único (slug)
-        type: string
-        required: true
       - name: name
         label: Nombre de la Marca
         type: string
@@ -93,6 +88,7 @@ content:
         type: image
         required: true
 
+  # 3. Hitos y Trayectoria
   - name: milestones
     label: Hitos y Trayectoria
     type: file
@@ -117,12 +113,13 @@ content:
         type: text
         required: true
       - name: metricsBadge
-        label: Insignia / Badge
+        label: Insignia / Badge (Opcional)
         type: string
       - name: highlight
         label: Destacar con Corona (Hito Clave)
         type: boolean
 
+  # 4. Equipo Directivo
   - name: leaders
     label: Equipo Directivo
     type: file
@@ -130,10 +127,6 @@ content:
     format: json
     list: true
     fields:
-      - name: id
-        label: Identificador Único
-        type: string
-        required: true
       - name: name
         label: Nombre Completo
         type: string
@@ -161,6 +154,7 @@ content:
         type: string
         list: true
 
+  # 5. Pilares Estratégicos
   - name: pillars
     label: Pilares Estratégicos
     type: file
@@ -172,3 +166,29 @@ content:
         label: Título del Pilar
         type: string
         required: true
+
+  # 6. Blog Minimalista (solo título, descripción, fecha y contenido opcional; slugs y readTime son dinámicos)
+  - name: blog
+    label: Artículos del Blog
+    type: file
+    path: src/data/posts.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Título del Artículo
+        type: string
+        required: true
+      - name: description
+        label: Descripción / Entradilla
+        type: text
+        required: true
+      - name: date
+        label: Fecha de Publicación (Opcional, por defecto hoy)
+        type: date
+      - name: author
+        label: Autor (Opcional, por defecto David Bermúdez A.)
+        type: string
+      - name: content
+        label: Contenido del Artículo (Opcional)
+        type: text

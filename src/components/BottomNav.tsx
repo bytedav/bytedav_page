@@ -1,6 +1,6 @@
 import React from 'react';
 import { PageId } from '../types';
-import { Home, BookOpen, Users, LayoutGrid } from 'lucide-react';
+import { Home, BookOpen, Users, LayoutGrid, Newspaper } from 'lucide-react';
 
 interface BottomNavProps {
   currentPage: PageId;
@@ -12,26 +12,32 @@ export const BottomNav: React.FC<BottomNavProps> = ({ currentPage, onNavigate })
     {
       id: 'home',
       label: 'Inicio',
-      icon: <Home className="w-6 h-6" />,
+      icon: <Home className="w-5 h-5 sm:w-6 sm:h-6" />,
       activeColor: 'text-[#18181b]',
     },
     {
       id: 'historia',
       label: 'Historia',
-      icon: <BookOpen className="w-6 h-6" />,
+      icon: <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />,
       activeColor: 'text-[#ce82ff]',
     },
     {
       id: 'liderazgo',
       label: 'Liderazgo',
-      icon: <Users className="w-6 h-6" />,
+      icon: <Users className="w-5 h-5 sm:w-6 sm:h-6" />,
       activeColor: 'text-[#ff9600]',
     },
     {
       id: 'marcas',
       label: 'Marcas',
-      icon: <LayoutGrid className="w-6 h-6" />,
+      icon: <LayoutGrid className="w-5 h-5 sm:w-6 sm:h-6" />,
       activeColor: 'text-[#1cb0f6]',
+    },
+    {
+      id: 'blog',
+      label: 'Blog',
+      icon: <Newspaper className="w-5 h-5 sm:w-6 sm:h-6" />,
+      activeColor: 'text-[#58cc02]',
     },
   ];
 
@@ -39,9 +45,9 @@ export const BottomNav: React.FC<BottomNavProps> = ({ currentPage, onNavigate })
     <nav
       id="duolingo-bottom-nav"
       aria-label="Navegación principal móvil"
-      className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-[#e5e5e5] px-2 py-1.5 safe-area-pb shadow-lg"
+      className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-[#e5e5e5] px-1 sm:px-2 py-1.5 safe-area-pb shadow-lg"
     >
-      <div className="grid grid-cols-4 items-center justify-around max-w-md mx-auto">
+      <div className="grid grid-cols-5 items-center justify-around max-w-md mx-auto">
         {navTabs.map((tab) => {
           const isActive = currentPage === tab.id;
           return (
@@ -52,7 +58,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ currentPage, onNavigate })
                 onNavigate(tab.id);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className={`flex flex-col items-center justify-center py-1.5 px-1 rounded-2xl transition-all duration-150 relative cursor-pointer active:scale-95 ${
+              className={`flex flex-col items-center justify-center py-1.5 px-0.5 rounded-2xl transition-all duration-150 relative cursor-pointer active:scale-95 ${
                 isActive
                   ? `${tab.activeColor} font-black`
                   : 'text-[#a1a1aa] hover:text-[#18181b] font-extrabold'
@@ -70,7 +76,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ currentPage, onNavigate })
                 )}
               </div>
 
-              <span className="text-[11px] uppercase tracking-wider mt-1 font-black font-display">
+              <span className="text-[10px] sm:text-[11px] uppercase tracking-wider mt-1 font-black font-display truncate max-w-full">
                 {tab.label}
               </span>
             </button>

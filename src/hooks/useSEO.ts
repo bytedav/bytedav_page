@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { PageId } from '../types';
-import { SEO_CONFIG, RouteSEO } from '../seo/seoConfig';
+import { SEO_CONFIG, RouteSEO, getBlogPostSEO } from '../seo/seoConfig';
 
 const ensureMetaTag = (attributeName: 'name' | 'property', attributeValue: string): HTMLMetaElement => {
   const selector = `meta[${attributeName}="${attributeValue}"]`;
@@ -29,11 +29,17 @@ const ensureCanonicalLink = (href: string) => {
   link.setAttribute('href', href);
 };
 
-export function useSEO(currentPage: PageId) {
+export function useSEO(currentPage: PageId, currentSlug?: string) {
   useEffect(() => {
     if (typeof document === 'undefined') return;
 
-    const seo: RouteSEO = SEO_CONFIG[currentPage] || SEO_CONFIG['404'];
+    let seo: RouteSEO;
+    if (currentPage === 'blog' && currentSlug) {
+      const blogPostSeo = getBlogPostSEO(currentSlug);
+      seo = blogPostSeo || SEO_CONFIG.blog;
+    } else {
+      seo = SEO_CONFIG[currentPage] || SEO_CONFIG['404'];
+    }
 
     // 1. Document Title
     document.title = seo.title;
@@ -96,5 +102,5 @@ export function useSEO(currentPage: PageId) {
     } else {
       scriptElement.textContent = '';
     }
-  }, [currentPage]);
+  }, [currentPage, currentSlug]);
 }

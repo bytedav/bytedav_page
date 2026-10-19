@@ -8,53 +8,85 @@ import { HomePage } from './pages/HomePage';
 import { HistoriaPage } from './pages/HistoriaPage';
 import { LiderazgoPage } from './pages/LiderazgoPage';
 import { MarcasPage } from './pages/MarcasPage';
+import { BlogPage } from './pages/BlogPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
+  const [currentSlug, setCurrentSlug] = useState<string | undefined>(undefined);
 
   // Dynamically update SEO metadata, social graph tags and canonical link
-  useSEO(currentPage);
+  useSEO(currentPage, currentSlug);
 
-  // Parse path to PageId and clean any legacy hash in browser URL
-  const getPageFromPath = (): PageId => {
+  // Parse path to PageId and dynamic slug (e.g. /blog/kaelos-digitalizacion)
+  const getRouteInfoFromLocation = (): { page: PageId; slug?: string } => {
     if (window.location.hash) {
       const cleanHash = window.location.hash.replace('#/', '').replace('#', '').trim();
       let targetPage: PageId = 'home';
-      if (['home', 'historia', 'liderazgo', 'marcas'].includes(cleanHash)) {
+      let slug: string | undefined = undefined;
+
+      if (cleanHash === 'blog') {
+        targetPage = 'blog';
+      } else if (cleanHash.startsWith('blog/')) {
+        targetPage = 'blog';
+        slug = cleanHash.replace(/^blog\//, '').trim();
+      } else if (['home', 'historia', 'liderazgo', 'marcas'].includes(cleanHash)) {
         targetPage = cleanHash as PageId;
       } else if (cleanHash) {
         targetPage = '404';
       }
-      const cleanPath = targetPage === 'home' ? '/' : `/${targetPage}`;
+
+      const cleanPath =
+        targetPage === 'home' ? '/' : slug ? `/blog/${slug}` : `/${targetPage}`;
       window.history.replaceState(null, '', cleanPath);
-      return targetPage;
+      return { page: targetPage, slug };
     }
 
     const rawPath = window.location.pathname.replace(/^\/+|\/+$/g, '').trim();
     if (!rawPath || rawPath === 'home') {
-      return 'home';
+      return { page: 'home' };
     }
+
+    if (rawPath === 'blog') {
+      return { page: 'blog' };
+    }
+
+    if (rawPath.startsWith('blog/')) {
+      const slug = rawPath.replace(/^blog\//, '').trim();
+      return { page: 'blog', slug };
+    }
+
     if (['historia', 'liderazgo', 'marcas'].includes(rawPath)) {
-      return rawPath as PageId;
+      return { page: rawPath as PageId };
     }
-    return '404';
+
+    return { page: '404' };
   };
 
   useEffect(() => {
-    const syncPage = () => {
-      setCurrentPage(getPageFromPath());
+    const syncRoute = () => {
+      const route = getRouteInfoFromLocation();
+      setCurrentPage(route.page);
+      setCurrentSlug(route.slug);
     };
 
-    window.addEventListener('popstate', syncPage);
-    syncPage();
+    window.addEventListener('popstate', syncRoute);
+    syncRoute();
 
-    return () => window.removeEventListener('popstate', syncPage);
+    return () => window.removeEventListener('popstate', syncRoute);
   }, []);
 
-  const navigateTo = (page: PageId) => {
+  const navigateTo = (page: PageId, slug?: string) => {
     setCurrentPage(page);
-    const targetPath = page === 'home' ? '/' : `/${page}`;
+    setCurrentSlug(slug);
+
+    const targetPath =
+      page === 'home'
+        ? '/'
+        : page === 'blog' && slug
+        ? `/blog/${slug}`
+        : `/${page}`;
+
     if (window.location.pathname !== targetPath || window.location.hash) {
       window.history.pushState(null, '', targetPath);
     }
@@ -66,23 +98,30 @@ export default function App() {
       {/* Duolingo Sticky Top Header (Status Bar + Desktop Nav) */}
       <Header
         currentPage={currentPage}
-        onNavigate={navigateTo}
+        onNavigate={(page) => navigateTo(page)}
       />
 
       {/* Main Content Area - with mobile bottom padding for BottomNav */}
       <main className="flex-1 w-full pb-20 md:pb-0">
-        {currentPage === 'home' && <HomePage onNavigate={navigateTo} />}
-        {currentPage === 'historia' && <HistoriaPage onNavigate={navigateTo} />}
+        {currentPage === 'home' && <HomePage onNavigate={(page) => navigateTo(page)} />}
+        {currentPage === 'historia' && <HistoriaPage onNavigate={(page) => navigateTo(page)} />}
         {currentPage === 'liderazgo' && <LiderazgoPage />}
         {currentPage === 'marcas' && <MarcasPage />}
-        {currentPage === '404' && <NotFoundPage onNavigate={navigateTo} />}
+        {currentPage === 'blog' && (
+          <BlogPage
+            onNavigate={(page) => navigateTo(page)}
+            activeSlug={currentSlug}
+            onSelectPost={(slug) => navigateTo('blog', slug)}
+          />
+        )}
+        {currentPage === '404' && <NotFoundPage onNavigate={(page) => navigateTo(page)} />}
       </main>
 
       {/* Corporate Duolingo Footer */}
-      <Footer onNavigate={navigateTo} />
+      <Footer onNavigate={(page) => navigateTo(page)} />
 
       {/* Duolingo Mobile Bottom Navigation Dock (Fixed on Mobile, hidden on md+) */}
-      <BottomNav currentPage={currentPage} onNavigate={navigateTo} />
+      <BottomNav currentPage={currentPage} onNavigate={(page) => navigateTo(page)} />
     </div>
   );
 }

@@ -1,7 +1,7 @@
-export type PageId = 'home' | 'historia' | 'liderazgo' | 'marcas' | '404';
+export type PageId = 'home' | 'historia' | 'liderazgo' | 'marcas' | 'blog' | '404';
 
 export interface PortfolioBrand {
-  id: string;
+  id?: string;
   name: string;
   yearFounded: number;
   description: string;
@@ -19,7 +19,7 @@ export interface Milestone {
 }
 
 export interface Leader {
-  id: string;
+  id?: string;
   name: string;
   area: string;
   bio: string;
@@ -31,4 +31,15 @@ export interface Leader {
 
 export interface HoldingPillar {
   title: string;
+}
+
+export interface BlogPost {
+  title: string;
+  description: string;
+  id?: string;
+  slug?: string;
+  date?: string;
+  readTime?: string;
+  author?: string;
+  content?: string;
 }

@@ -1,5 +1,5 @@
 import { PageId } from '../types';
-import { HOLDING_CONFIG, PORTFOLIO_BRANDS, LEADERS, MILESTONES, HOLDING_PILLARS } from '../data/holdingData';
+import { HOLDING_CONFIG, PORTFOLIO_BRANDS, LEADERS, MILESTONES, HOLDING_PILLARS, BLOG_POSTS } from '../data/holdingData';
 
 export interface RouteSEO {
   pageId: PageId;
@@ -309,6 +309,74 @@ export const SEO_CONFIG: Record<PageId, RouteSEO> = {
       <p>¿Buscas inversión o alianza estratégica? Escríbenos a <a href="mailto:${HOLDING_CONFIG.contactEmail}">${HOLDING_CONFIG.contactEmail}</a>.</p>
     `,
   },
+  blog: {
+    pageId: 'blog',
+    path: '/blog',
+    title: 'Blog y Perspectivas | Bytedav',
+    description:
+      'Artículos, análisis y perspectivas sobre tecnología, modelos de holding y economía real compartidos por el equipo directivo de Bytedav.',
+    canonicalUrl: `${DOMAIN}/blog`,
+    ogImage: DEFAULT_OG_IMAGE,
+    ogImageWidth: 1200,
+    ogImageHeight: 630,
+    ogImageType: 'image/png',
+    ogType: 'website',
+    ogLocale: DEFAULT_LOCALE,
+    siteName: HOLDING_CONFIG.name,
+    twitterCard: 'summary_large_image',
+    robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+    changefreq: 'weekly',
+    priority: 0.8,
+    lastmod: LAST_MOD_DATE,
+    jsonLd: [
+      corporationSchema,
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Blog',
+        '@id': `${DOMAIN}/blog#blog`,
+        url: `${DOMAIN}/blog`,
+        name: 'Blog y Perspectivas — Bytedav',
+        description: 'Ideas y análisis sobre tecnología y economía real del holding Bytedav.',
+        publisher: {
+          '@id': `${DOMAIN}/#corporation`,
+        },
+        blogPost: BLOG_POSTS.map((post) => ({
+          '@type': 'BlogPosting',
+          headline: post.title,
+          description: post.description,
+          datePublished: post.date,
+          author: {
+            '@type': 'Person',
+            name: post.author,
+          },
+        })),
+      },
+      createBreadcrumbs([
+        { name: 'Inicio', url: `${DOMAIN}/` },
+        { name: 'Blog', url: `${DOMAIN}/blog` },
+      ]),
+    ],
+    noscriptSummary: `
+      <h1>Blog y Perspectivas — Bytedav</h1>
+      <p>Ideas, análisis y reflexiones sobre tecnología, escalamiento y modelos de negocio en la economía real.</p>
+      <h2>Artículos Recientes</h2>
+      <ul>
+        ${BLOG_POSTS.map((p) => `
+          <li>
+            <h3>${p.title}</h3>
+            <p>${p.date} · ${p.readTime} · Por ${p.author}</p>
+            <p>${p.description}</p>
+          </li>
+        `).join('')}
+      </ul>
+      <nav>
+        <a href="/">Inicio</a> |
+        <a href="/historia">Historia</a> |
+        <a href="/liderazgo">Liderazgo</a> |
+        <a href="/marcas">Marcas</a>
+      </nav>
+    `,
+  },
   '404': {
     pageId: '404',
     path: '/404',
@@ -337,9 +405,83 @@ export const SEO_CONFIG: Record<PageId, RouteSEO> = {
   },
 };
 
+export function getBlogPostSEO(slug: string): RouteSEO | null {
+  const post = BLOG_POSTS.find((p) => (p.slug || p.id) === slug);
+  if (!post) return null;
+
+  const postSlug = post.slug || post.id || '';
+  const canonicalUrl = `${DOMAIN}/blog/${postSlug}`;
+  const brandedTitle = `${post.title} | Bytedav`;
+  const title = brandedTitle.length <= 60 ? brandedTitle : post.title.slice(0, 60);
+
+  return {
+    pageId: 'blog',
+    path: `/blog/${postSlug}`,
+    title,
+    description: post.description,
+    canonicalUrl,
+    ogImage: DEFAULT_OG_IMAGE,
+    ogImageWidth: 1200,
+    ogImageHeight: 630,
+    ogImageType: 'image/png',
+    ogType: 'article',
+    ogLocale: DEFAULT_LOCALE,
+    siteName: HOLDING_CONFIG.name,
+    twitterCard: 'summary_large_image',
+    robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+    changefreq: 'monthly',
+    priority: 0.7,
+    lastmod: post.date || LAST_MOD_DATE,
+    jsonLd: [
+      corporationSchema,
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        '@id': `${canonicalUrl}#article`,
+        mainEntityOfPage: canonicalUrl,
+        headline: post.title,
+        description: post.description,
+        articleBody: post.content || post.description,
+        datePublished: post.date,
+        author: {
+          '@type': 'Person',
+          name: post.author || 'David Bermúdez A.',
+        },
+        publisher: {
+          '@id': `${DOMAIN}/#corporation`,
+        },
+      },
+      createBreadcrumbs([
+        { name: 'Inicio', url: `${DOMAIN}/` },
+        { name: 'Blog', url: `${DOMAIN}/blog` },
+        { name: post.title, url: canonicalUrl },
+      ]),
+    ],
+    noscriptSummary: `
+      <article>
+        <h1>${post.title}</h1>
+        <p><strong>Fecha:</strong> ${post.date} · <strong>Lectura:</strong> ${post.readTime} · <strong>Autor:</strong> ${post.author}</p>
+        <p><em>${post.description}</em></p>
+        <div>
+          ${(post.content || post.description)
+            .split('\n\n')
+            .map((p) => `<p>${p}</p>`)
+            .join('')}
+        </div>
+        <p><a href="/blog">Volver al Blog de Bytedav</a></p>
+      </article>
+    `,
+  };
+}
+
 export const SITEMAP_ROUTES = [
   SEO_CONFIG.home,
   SEO_CONFIG.historia,
   SEO_CONFIG.liderazgo,
   SEO_CONFIG.marcas,
+  SEO_CONFIG.blog,
+  ...BLOG_POSTS.map((post) => getBlogPostSEO(post.slug || post.id!)).filter(
+    (item): item is RouteSEO => item !== null
+  ),
 ];
+
