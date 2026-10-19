@@ -1,6 +1,6 @@
 # Pages CMS Configuration (https://pagescms.org)
-# Configuración optimizada: los campos técnicos (slugs, IDs, tiempo de lectura, URLs derivadas)
-# son calculados dinámicamente por la aplicación y no requieren entrada manual.
+# Los campos técnicos (slugs, IDs, tiempo de lectura, URLs derivadas)
+# los calcula la aplicación y no requieren entrada manual.
 
 settings:
   title: Bytedav CMS
@@ -8,6 +8,7 @@ settings:
 media:
   input: public
   output: /
+  rename: safe
   categories:
     - image
 
@@ -23,41 +24,68 @@ content:
         label: Nombre Comercial
         type: string
         required: true
+        description: Nombre público con el que se conoce al holding.
       - name: legalName
         label: Razón Social / Nombre Legal
         type: string
         required: true
+        description: Nombre legal registrado de la empresa.
       - name: tagline
         label: Lema / Tagline
         type: string
         required: true
+        description: Frase corta que resume la propuesta del holding.
       - name: domain
         label: Dominio Web Canónico
         type: string
         required: true
+        description: Dominio principal con protocolo. Ejemplo, https://bytedav.com
+        pattern:
+          regex: '^https?://[^\s/$.?#].[^\s]*$'
+          message: Ingresa una URL válida que empiece con http:// o https://
       - name: contactEmail
         label: Correo de Contacto Corporativo
         type: string
         required: true
+        description: Correo público de contacto.
+        pattern:
+          regex: '^[^\s@]+@[^\s@]+\.[^\s@]+$'
+          message: Ingresa un correo electrónico válido.
       - name: socialLinks
         label: Redes Sociales Oficiales
         type: object
+        description: Enlaces completos a los perfiles oficiales. Deja vacío lo que no aplique.
         fields:
           - name: linkedin
             label: LinkedIn Corporativo
             type: string
+            pattern:
+              regex: '^$|^https?://.+'
+              message: Debe ser una URL completa (https://...).
           - name: facebook
             label: Facebook
             type: string
+            pattern:
+              regex: '^$|^https?://.+'
+              message: Debe ser una URL completa (https://...).
           - name: tiktok
             label: TikTok
             type: string
+            pattern:
+              regex: '^$|^https?://.+'
+              message: Debe ser una URL completa (https://...).
           - name: instagram
             label: Instagram
             type: string
+            pattern:
+              regex: '^$|^https?://.+'
+              message: Debe ser una URL completa (https://...).
           - name: youtube
             label: YouTube
             type: string
+            pattern:
+              regex: '^$|^https?://.+'
+              message: Debe ser una URL completa (https://...).
 
   # 2. Marcas del Portafolio
   - name: brands
@@ -75,18 +103,27 @@ content:
         label: Año de Lanzamiento / Incubación
         type: number
         required: true
+        description: Año en formato de cuatro dígitos.
+        options:
+          min: 1900
+          max: 2100
       - name: description
         label: Descripción de la Plataforma
         type: text
         required: true
+        description: Resumen breve de qué hace la marca.
       - name: websiteUrl
         label: Enlace al Sitio Web Oficial
         type: string
         required: true
+        pattern:
+          regex: '^https?://.+'
+          message: Debe ser una URL completa (https://...).
       - name: image
         label: Imagen / Logotipo
         type: image
         required: true
+        description: Logotipo de la marca, preferiblemente con fondo transparente.
 
   # 3. Hitos y Trayectoria
   - name: milestones
@@ -100,6 +137,9 @@ content:
         label: Año
         type: string
         required: true
+        pattern:
+          regex: '^\d{4}$'
+          message: Usa cuatro dígitos, por ejemplo 2024.
       - name: quarter
         label: Periodo / Hito (ej. Fundación, Incubación)
         type: string
@@ -115,9 +155,11 @@ content:
       - name: metricsBadge
         label: Insignia / Badge (Opcional)
         type: string
+        description: Texto corto de métrica o logro. Ejemplo, +10K usuarios
       - name: highlight
         label: Destacar con Corona (Hito Clave)
         type: boolean
+        default: false
 
   # 4. Equipo Directivo
   - name: leaders
@@ -143,16 +185,24 @@ content:
         label: Fotografía Oficial
         type: image
         required: true
+        description: Retrato cuadrado o vertical con buena iluminación.
       - name: email
         label: Correo Electrónico
         type: string
+        pattern:
+          regex: '^$|^[^\s@]+@[^\s@]+\.[^\s@]+$'
+          message: Ingresa un correo electrónico válido.
       - name: linkedin
         label: Enlace de LinkedIn
         type: string
+        pattern:
+          regex: '^$|^https?://.+'
+          message: Debe ser una URL completa (https://...).
       - name: specialties
         label: Especialidades / Áreas de Dominio
         type: string
         list: true
+        description: Agrega una especialidad por elemento.
 
   # 5. Pilares Estratégicos
   - name: pillars
@@ -167,7 +217,7 @@ content:
         type: string
         required: true
 
-  # 6. Blog Minimalista (solo título, descripción, fecha y contenido opcional; slugs y readTime son dinámicos)
+  # 6. Blog (slugs y readTime son dinámicos)
   - name: blog
     label: Artículos del Blog
     type: file
@@ -183,12 +233,14 @@ content:
         label: Descripción / Entradilla
         type: text
         required: true
+        description: Resumen que aparece en listados y metadatos.
       - name: date
         label: Fecha de Publicación (Opcional, por defecto hoy)
         type: date
       - name: author
         label: Autor (Opcional, por defecto bytedav.)
         type: string
+        default: bytedav.
       - name: content
         label: Contenido del Artículo (Opcional)
         type: text
