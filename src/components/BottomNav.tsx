@@ -19,25 +19,25 @@ export const BottomNav: React.FC<BottomNavProps> = ({ currentPage, onNavigate })
       id: 'historia',
       label: 'Historia',
       icon: <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />,
-      activeColor: 'text-[#ce82ff]',
+      activeColor: 'text-[#18181b]',
     },
     {
       id: 'liderazgo',
       label: 'Liderazgo',
       icon: <Users className="w-5 h-5 sm:w-6 sm:h-6" />,
-      activeColor: 'text-[#ff9600]',
+      activeColor: 'text-[#18181b]',
     },
     {
       id: 'marcas',
       label: 'Marcas',
       icon: <LayoutGrid className="w-5 h-5 sm:w-6 sm:h-6" />,
-      activeColor: 'text-[#1cb0f6]',
+      activeColor: 'text-[#18181b]',
     },
     {
       id: 'blog',
       label: 'Blog',
       icon: <Newspaper className="w-5 h-5 sm:w-6 sm:h-6" />,
-      activeColor: 'text-[#58cc02]',
+      activeColor: 'text-[#18181b]',
     },
   ];
 

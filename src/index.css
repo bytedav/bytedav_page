@@ -7,30 +7,23 @@
     --font-inter: 'Inter', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
-    /* Duolingo Brand Palette */
-    --duo-green: #58cc02;
-    --duo-green-dark: #46a302;
-    --duo-blue: #1cb0f6;
-    --duo-blue-dark: #1899d6;
-    --duo-yellow: #ffc800;
-    --duo-yellow-dark: #e5a500;
-    --duo-orange: #ff9600;
-    --duo-orange-dark: #e58700;
-    --duo-red: #ff4b4b;
-    --duo-red-dark: #ea2b2b;
-    --duo-purple: #ce82ff;
-    --duo-purple-dark: #a557df;
-    --duo-border: #e5e5e5;
-    --duo-border-dark: #cecece;
-    --duo-text: #3c3c3c;
-    --duo-muted: #777777;
-    --duo-bg: #f7f7f7;
+    /* Monochrome / Black, White & Grayscale Palette */
+    --mono-black: #18181b;
+    --mono-black-deep: #09090b;
+    --mono-charcoal: #27272a;
+    --mono-zinc: #3f3f46;
+    --mono-muted: #71717a;
+    --mono-silver: #a1a1aa;
+    --mono-border: #e4e4e7;
+    --mono-border-subtle: #f4f4f5;
+    --mono-bg: #f7f7f7;
+    --mono-card: #ffffff;
   }
 
   body {
     font-family: var(--font-nunito);
     background-color: #f7f7f7;
-    color: #3c3c3c;
+    color: #18181b;
     overflow-x: hidden;
   }
 
@@ -44,54 +37,60 @@
   }
 }
 
-/* Duolingo 3D Button and Surface Utilities */
-.duo-btn-green {
-  background-color: #58cc02;
-  border-bottom: 4px solid #46a302;
+/* 3D Button and Surface Utilities in Black & White */
+.duo-btn-green,
+.duo-btn-primary {
+  background-color: #18181b;
+  border-bottom: 4px solid #09090b;
   color: #ffffff;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: all 0.1s ease-in-out;
 }
-.duo-btn-green:hover {
-  background-color: #61e002;
+.duo-btn-green:hover,
+.duo-btn-primary:hover {
+  background-color: #27272a;
 }
-.duo-btn-green:active {
+.duo-btn-green:active,
+.duo-btn-primary:active {
   transform: translateY(3px);
   border-bottom-width: 1px;
 }
 
-.duo-btn-blue {
-  background-color: #1cb0f6;
-  border-bottom: 4px solid #1899d6;
+.duo-btn-blue,
+.duo-btn-secondary {
+  background-color: #27272a;
+  border-bottom: 4px solid #18181b;
   color: #ffffff;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: all 0.1s ease-in-out;
 }
-.duo-btn-blue:hover {
-  background-color: #2ec5ff;
+.duo-btn-blue:hover,
+.duo-btn-secondary:hover {
+  background-color: #3f3f46;
 }
-.duo-btn-blue:active {
+.duo-btn-blue:active,
+.duo-btn-secondary:active {
   transform: translateY(3px);
   border-bottom-width: 1px;
 }
 
 .duo-btn-white {
   background-color: #ffffff;
-  border: 2px solid #e5e5e5;
-  border-bottom: 4px solid #e5e5e5;
-  color: #4b4b4b;
+  border: 2px solid #e4e4e7;
+  border-bottom: 4px solid #d4d4d8;
+  color: #18181b;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: all 0.1s ease-in-out;
 }
 .duo-btn-white:hover {
-  background-color: #f7f7f7;
-  border-color: #cecece;
+  background-color: #f4f4f5;
+  border-color: #18181b;
 }
 .duo-btn-white:active {
   transform: translateY(3px);
@@ -99,8 +98,8 @@
 }
 
 .duo-btn-dark {
-  background-color: #2b2b2b;
-  border-bottom: 4px solid #141414;
+  background-color: #18181b;
+  border-bottom: 4px solid #09090b;
   color: #ffffff;
   font-weight: 800;
   text-transform: uppercase;
@@ -108,7 +107,7 @@
   transition: all 0.1s ease-in-out;
 }
 .duo-btn-dark:hover {
-  background-color: #383838;
+  background-color: #27272a;
 }
 .duo-btn-dark:active {
   transform: translateY(3px);
@@ -117,28 +116,28 @@
 
 .duo-card {
   background-color: #ffffff;
-  border: 2px solid #e5e5e5;
-  border-bottom: 4px solid #e5e5e5;
+  border: 2px solid #e4e4e7;
+  border-bottom: 4px solid #e4e4e7;
   border-radius: 20px;
   transition: all 0.2s ease;
 }
 .duo-card:hover {
-  border-color: #d1d5db;
+  border-color: #18181b;
 }
 
 .duo-tile {
   background-color: #ffffff;
-  border: 2px solid #e5e5e5;
-  border-bottom: 4px solid #e5e5e5;
+  border: 2px solid #e4e4e7;
+  border-bottom: 4px solid #e4e4e7;
   border-radius: 16px;
   transition: all 0.15s ease;
 }
 .duo-tile:hover {
-  border-color: #1cb0f6;
-  background-color: #f0f9ff;
+  border-color: #18181b;
+  background-color: #f4f4f5;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar in monochrome tones */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -147,9 +146,9 @@
   background: #f7f7f7;
 }
 ::-webkit-scrollbar-thumb {
-  background: #e5e5e5;
+  background: #d4d4d8;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #cecece;
+  background: #a1a1aa;
 }

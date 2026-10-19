@@ -14,7 +14,7 @@ export const BrandCard: React.FC<BrandCardProps> = ({
   return (
     <div
       id={`brand-card-${brand.id}`}
-      className="group bg-white p-4 sm:p-5 rounded-2xl sm:rounded-3xl border-2 border-b-4 border-[#e5e5e5] hover:border-[#1cb0f6] transition-all duration-200 flex flex-col justify-between"
+      className="group bg-white p-4 sm:p-5 rounded-2xl sm:rounded-3xl border-2 border-b-4 border-[#e5e5e5] hover:border-[#18181b] transition-all duration-200 flex flex-col justify-between"
     >
       <div>
         {/* Brand Image with nested border and rounded corners */}

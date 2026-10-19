@@ -44,9 +44,20 @@ export function useSEO(currentPage: PageId, currentSlug?: string) {
     // 1. Document Title
     document.title = seo.title;
 
-    // 2. Standard Meta Tags
+    // 2. Standard Meta Tags & AI Directives
     setMetaContent('name', 'description', seo.description);
     setMetaContent('name', 'robots', seo.robots);
+    setMetaContent('name', 'keywords', seo.keywords);
+    setMetaContent('name', 'author', seo.author);
+
+    // AI & Search Engine Specific Directives
+    if (seo.pageId !== '404') {
+      setMetaContent('name', 'googlebot', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+      setMetaContent('name', 'bingbot', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+    } else {
+      setMetaContent('name', 'googlebot', 'noindex, follow');
+      setMetaContent('name', 'bingbot', 'noindex, follow');
+    }
 
     // 3. OpenGraph Tags
     setMetaContent('property', 'og:title', seo.title);
@@ -64,6 +75,13 @@ export function useSEO(currentPage: PageId, currentSlug?: string) {
     }
     if (seo.ogImageType) {
       setMetaContent('property', 'og:image:type', seo.ogImageType);
+    }
+
+    // Article Specific OpenGraph Tags
+    if (seo.ogType === 'article') {
+      setMetaContent('property', 'article:published_time', seo.lastmod);
+      setMetaContent('property', 'article:author', seo.author);
+      setMetaContent('property', 'article:section', 'Tecnología y Negocios');
     }
 
     // 4. Twitter Card Tags

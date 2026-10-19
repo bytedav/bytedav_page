@@ -36,14 +36,13 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
     );
   };
 
-  // Duolingo 3D button themes for path nodes
+  // 3D button themes for path nodes (Monochrome Black & White)
   const nodeThemes = [
     {
-      bg: 'bg-[#58cc02] hover:bg-[#61e002]',
-      shadow: 'border-b-6 border-[#46a302]',
-      badgeBg: 'bg-emerald-50 text-[#46a302] border-emerald-200',
-      badgeText: 'text-[#46a302]',
-   
+      bg: 'bg-[#18181b] hover:bg-[#27272a]',
+      shadow: 'border-b-6 border-[#09090b]',
+      badgeBg: 'bg-[#f4f4f5] text-[#18181b] border-[#e4e4e7]',
+      badgeText: 'text-[#18181b]',
     },
   ];
 
@@ -66,9 +65,9 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
 
   return (
     <div id="historia-page" className="w-full flex flex-col pb-10 sm:pb-16">
-      {/* 1. Duolingo Unit Header Banner */}
+      {/* 1. Header Banner */}
       <section className="w-full px-3.5 sm:px-8 max-w-7xl mx-auto pt-4 sm:pt-8">
-        <div className="bg-[#ce82ff] border-b-6 border-[#a557df] rounded-3xl sm:rounded-4xl p-6 sm:p-12 text-white shadow-md">
+        <div className="bg-[#18181b] border-b-6 border-[#09090b] rounded-3xl sm:rounded-4xl p-6 sm:p-12 text-white shadow-md">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight font-display leading-[1.1]">
@@ -97,7 +96,7 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
                   {/* Crown on top for highlights */}
                   {milestone.highlight && (
                     <div className="absolute -top-5 sm:-top-6 animate-bounce">
-                      <Crown className="w-5 h-5 sm:w-6 sm:h-6 text-[#ffc800] fill-[#ffc800] drop-shadow-sm" />
+                      <Crown className="w-5 h-5 sm:w-6 sm:h-6 text-zinc-300 fill-zinc-300 drop-shadow-sm" />
                     </div>
                   )}
 
@@ -126,7 +125,7 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
                 {/* Duolingo Speech Bubble / Dialog Card */}
                 <div
                   className={`mt-3 w-full max-w-lg bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border-2 border-b-4 border-[#e5e5e5] shadow-xs relative transition-all duration-200 ${
-                    isSelected ? 'ring-4 ring-[#58cc02]/30 border-[#58cc02]' : ''
+                    isSelected ? 'ring-4 ring-black/10 border-[#18181b]' : ''
                   }`}
                 >
                   <div className="relative z-10">
@@ -139,8 +138,8 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
                       </div>
 
                       {milestone.metricsBadge && (
-                        <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-black px-2.5 py-1 sm:px-3 sm:py-1 rounded-xl bg-amber-50 border border-amber-200 text-amber-700">
-                          <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500" />
+                        <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-black px-2.5 py-1 sm:px-3 sm:py-1 rounded-xl bg-[#f4f4f5] border border-[#e4e4e7] text-[#18181b]">
+                          <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#18181b]" />
                           {milestone.metricsBadge}
                         </span>
                       )}
@@ -168,7 +167,7 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
 
           {/* End of Path Station */}
           <div className="flex flex-col items-center mt-4 sm:mt-6 z-20">
-            <div className="w-18 h-18 sm:w-22 sm:h-22 rounded-full bg-[#ffc800] border-b-6 border-[#e5a500] flex items-center justify-center shadow-md">
+            <div className="w-18 h-18 sm:w-22 sm:h-22 rounded-full bg-[#18181b] border-b-6 border-[#09090b] flex items-center justify-center shadow-md">
               <Trophy className="w-8 h-8 sm:w-10 sm:h-10 text-white fill-white/40" />
             </div>
             <span className="mt-3 text-sm sm:text-base font-black uppercase tracking-wider text-[#18181b] font-display">
@@ -190,7 +189,7 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             <div className="bg-[#f7f7f7] p-5 sm:p-7 rounded-2xl sm:rounded-3xl border-2 border-b-4 border-[#e5e5e5] flex flex-col justify-between">
               <div>
-                <span className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#58cc02] border-b-3 border-[#46a302] text-white font-black text-lg sm:text-xl flex items-center justify-center mb-3.5 sm:mb-4">
+                <span className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#18181b] border-b-3 border-[#09090b] text-white font-black text-lg sm:text-xl flex items-center justify-center mb-3.5 sm:mb-4">
                   01
                 </span>
                 <h3 className="font-display text-lg sm:text-xl font-black text-[#18181b]">
@@ -201,7 +200,7 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
 
             <div className="bg-[#f7f7f7] p-5 sm:p-7 rounded-2xl sm:rounded-3xl border-2 border-b-4 border-[#e5e5e5] flex flex-col justify-between">
               <div>
-                <span className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#1cb0f6] border-b-3 border-[#1899d6] text-white font-black text-lg sm:text-xl flex items-center justify-center mb-3.5 sm:mb-4">
+                <span className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#27272a] border-b-3 border-[#18181b] text-white font-black text-lg sm:text-xl flex items-center justify-center mb-3.5 sm:mb-4">
                   02
                 </span>
                 <h3 className="font-display text-lg sm:text-xl font-black text-[#18181b]">
@@ -212,7 +211,7 @@ export const HistoriaPage: React.FC<HistoriaPageProps> = ({ onNavigate }) => {
 
             <div className="bg-[#f7f7f7] p-5 sm:p-7 rounded-2xl sm:rounded-3xl border-2 border-b-4 border-[#e5e5e5] flex flex-col justify-between">
               <div>
-                <span className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#ff9600] border-b-3 border-[#e58700] text-white font-black text-lg sm:text-xl flex items-center justify-center mb-3.5 sm:mb-4">
+                <span className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#3f3f46] border-b-3 border-[#27272a] text-white font-black text-lg sm:text-xl flex items-center justify-center mb-3.5 sm:mb-4">
                   03
                 </span>
                 <h3 className="font-display text-lg sm:text-xl font-black text-[#18181b]">

@@ -11,7 +11,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({ onNavigate }) => {
     <div id="not-found-page" className="w-full flex flex-col items-center justify-center py-12 sm:py-20 px-4 max-w-4xl mx-auto">
       {/* 404 Hero Unit Card */}
       <div className="w-full bg-white border-2 border-b-6 border-[#e5e5e5] rounded-3xl sm:rounded-4xl p-6 sm:p-12 text-center shadow-sm">
-        <div className="inline-block px-4 py-1.5 rounded-xl bg-rose-50 text-[#ea2b2b] border border-rose-200 text-xs sm:text-sm font-black uppercase tracking-wider mb-4">
+        <div className="inline-block px-4 py-1.5 rounded-xl bg-[#f4f4f5] text-[#18181b] border border-[#e4e4e7] text-xs sm:text-sm font-black uppercase tracking-wider mb-4">
           Error 404 — Ruta Inexistente
         </div>
 
@@ -56,25 +56,25 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({ onNavigate }) => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <button
               onClick={() => onNavigate('historia')}
-              className="p-3.5 rounded-2xl bg-[#f7f7f7] border-2 border-b-3 border-[#e5e5e5] hover:border-[#ce82ff] transition-all flex items-center justify-center gap-2 text-xs sm:text-sm font-black text-[#18181b] cursor-pointer"
+              className="p-3.5 rounded-2xl bg-[#f7f7f7] border-2 border-b-3 border-[#e5e5e5] hover:border-[#18181b] transition-all flex items-center justify-center gap-2 text-xs sm:text-sm font-black text-[#18181b] cursor-pointer"
             >
-              <BookOpen className="w-4 h-4 text-[#ce82ff]" />
+              <BookOpen className="w-4 h-4 text-[#18181b]" />
               <span>Nuestra Historia</span>
             </button>
 
             <button
               onClick={() => onNavigate('liderazgo')}
-              className="p-3.5 rounded-2xl bg-[#f7f7f7] border-2 border-b-3 border-[#e5e5e5] hover:border-[#ff9600] transition-all flex items-center justify-center gap-2 text-xs sm:text-sm font-black text-[#18181b] cursor-pointer"
+              className="p-3.5 rounded-2xl bg-[#f7f7f7] border-2 border-b-3 border-[#e5e5e5] hover:border-[#18181b] transition-all flex items-center justify-center gap-2 text-xs sm:text-sm font-black text-[#18181b] cursor-pointer"
             >
-              <Users className="w-4 h-4 text-[#ff9600]" />
+              <Users className="w-4 h-4 text-[#18181b]" />
               <span>Equipo y Liderazgo</span>
             </button>
 
             <button
               onClick={() => onNavigate('marcas')}
-              className="p-3.5 rounded-2xl bg-[#f7f7f7] border-2 border-b-3 border-[#e5e5e5] hover:border-[#1cb0f6] transition-all flex items-center justify-center gap-2 text-xs sm:text-sm font-black text-[#18181b] cursor-pointer"
+              className="p-3.5 rounded-2xl bg-[#f7f7f7] border-2 border-b-3 border-[#e5e5e5] hover:border-[#18181b] transition-all flex items-center justify-center gap-2 text-xs sm:text-sm font-black text-[#18181b] cursor-pointer"
             >
-              <LayoutGrid className="w-4 h-4 text-[#1cb0f6]" />
+              <LayoutGrid className="w-4 h-4 text-[#18181b]" />
               <span>Marcas del Holding</span>
             </button>
           </div>

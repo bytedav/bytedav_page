@@ -1,41 +1,44 @@
-# Bytedav — Holding Tecnológico
+# Bytedav — Holding Operador Tecnológico
 
-> Bytedav es un holding operador tecnológico especializado en concebir, estructurar y escalar empresas verticales con alto componente tecnológico y enfoque en la economía real.
+> Bytedav es un holding operador tecnológico especializado en estructurar, operar y escalar empresas verticales con alto componente tecnológico y foco en la economía real.
+
+Para una base de conocimiento exhaustiva con el contenido completo de artículos, preguntas frecuentes y modelos operativos, consulta [llms-full.txt](https://bytedav.com/llms-full.txt).
 
 ## Resumen Corporativo
 
-Bytedav opera bajo un modelo de autonomía operativa, infraestructura técnica compartida y disciplina de capital. Desarrolla y potencia soluciones digitales líderes como Kaelos en el sector de motocicletas y movilidad.
+Bytedav opera bajo un modelo de autonomía operativa para cada empresa de su portafolio, respaldada por infraestructura técnica compartida y disciplina rigurosa de capital. Desarrolla y potencia plataformas líderes como Kaelos en el sector de motocicletas y movilidad especializada.
 
 - **Fundador y CEO**: David Bermúdez A. (https://linkedin.com/in/davidbermudeza)
 - **Contacto Corporativo**: bytedav@gmail.com
 - **Sitio Web Oficial**: https://bytedav.com/
+- **Canal de LinkedIn**: https://linkedin.com/company/bytedav
 
 ## Marcas del Portafolio
 
 - [Kaelos](https://kaelos.com): La mayor plataforma de venta de motos nuevas y de ocasión, renting y servicios de movilidad. (fundada en 2026).
 
-## Enlaces del Sitio Web
+## Enlaces Principales del Sitio Web
 
-- [Inicio](https://bytedav.com/): Visión general del holding, tesis operativa y catálogo de marcas del portafolio.
+- [Inicio](https://bytedav.com/): Visión corporativa, tesis operativa y catálogo de marcas del portafolio.
 - [Historia y Trayectoria](https://bytedav.com/historia): Origen, hitos fundacionales de Bytedav y pilares estratégicos de operación.
-- [Liderazgo Directivo](https://bytedav.com/liderazgo): Perfil de la dirección general (David Bermúdez A.) y áreas de especialidad.
-- [Marcas](https://bytedav.com/marcas): Ecosistema y plataformas operadas por el holding.
-- [Blog](https://bytedav.com/blog): Ideas, análisis y perspectivas sobre tecnología y modelos de negocio en la economía real.
+- [Liderazgo Directivo](https://bytedav.com/liderazgo): Perfil de la dirección general (David Bermúdez A.) y áreas de especialidad técnica y estratégica.
+- [Marcas del Portafolio](https://bytedav.com/marcas): Ecosistema y plataformas operadas bajo el modelo Bytedav.
+- [Blog y Perspectivas](https://bytedav.com/blog): Artículos y análisis sobre tecnología, soberanía de software y modelos de negocio en la economía real.
 
-## Artículos del Blog
+## Artículos de Opinión y Tesis Estratégica
 
 - [La tesis de un holding tecnológico en la economía real](https://bytedav.com/blog/la-tesis-de-un-holding-tecnologico-en-la-economia-real): Por qué preferimos construir y operar empresas verticales con activos tangibles y utilidad probada antes que perseguir narrativas transitorias.
 - [Kaelos y la digitalización del mercado de dos ruedas](https://bytedav.com/blog/kaelos-y-la-digitalizacion-del-mercado-de-dos-ruedas): Cómo la integración de renting, venta digital y logística especializada transforma el ecosistema de motocicletas nuevas y de ocasión.
 - [Soberanía tecnológica: el software como ventaja competitiva](https://bytedav.com/blog/soberania-tecnologica-el-software-como-ventaja-competitiva): Desarrollar plataformas propias sin intermediarios crea fosos defensivos y optimiza el retorno de capital en cada marca del holding.
 
-## Pilares Estratégicos
+## Pilares Estratégicos de Operación
 
-- Autonomía Operativa con Respaldo Central
-- Sinergia de Ecosistema
-- Infraestructura Tecnológica Compartida
-- Gobernanza y Disciplina de Capital
+- **Autonomía Operativa con Respaldo Central**
+- **Sinergia de Ecosistema**
+- **Infraestructura Tecnológica Compartida**
+- **Gobernanza y Disciplina de Capital**
 
-## Hitos Clave
+## Hitos Clave en la Cronología
 
 - **2023 (Fundación)**: Constitución de Bytedav — Nacimiento de Bytedav como holding operador tecnológico para estructurar, operar y potenciar marcas especializadas.
 - **2026 (Incubación)**: Lanzamiento de Kaelos — Primera incubación vertical de Bytedav enfocada en la digitalización integral del sector de motocicletas.

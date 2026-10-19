@@ -10,7 +10,7 @@ export const LeaderCard: React.FC<LeaderCardProps> = ({ leader }) => {
   return (
     <div
       id={`leader-card-${leader.id}`}
-      className="group w-full bg-white rounded-3xl p-4 sm:p-8 lg:p-10 border-2 border-b-4 border-[#e5e5e5] hover:border-[#58cc02] transition-all duration-200 flex flex-col md:flex-row gap-5 sm:gap-8 lg:gap-10 items-stretch justify-between"
+      className="group w-full bg-white rounded-3xl p-4 sm:p-8 lg:p-10 border-2 border-b-4 border-[#e5e5e5] hover:border-[#18181b] transition-all duration-200 flex flex-col md:flex-row gap-5 sm:gap-8 lg:gap-10 items-stretch justify-between"
     >
       <div className="w-full md:w-80 lg:w-96 shrink-0 aspect-[4/3] md:aspect-[4/5] rounded-2xl overflow-hidden bg-slate-100 relative border-2 border-[#e5e5e5]">
         <img
@@ -28,7 +28,7 @@ export const LeaderCard: React.FC<LeaderCardProps> = ({ leader }) => {
       <div className="flex-1 flex flex-col justify-between py-1">
         <div>
           <div className="mb-3.5 sm:mb-5">
-            <div className="inline-block px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-xl bg-[#e5f6ff] text-[#1cb0f6] border border-[#84d8ff] text-xs sm:text-sm font-black uppercase tracking-wider mb-2 sm:mb-2.5">
+            <div className="inline-block px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-xl bg-[#f4f4f5] text-[#18181b] border border-[#e4e4e7] text-xs sm:text-sm font-black uppercase tracking-wider mb-2 sm:mb-2.5">
               {leader.area}
             </div>
             <h3 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black text-[#18181b] tracking-tight">
@@ -72,7 +72,7 @@ export const LeaderCard: React.FC<LeaderCardProps> = ({ leader }) => {
                 className="flex-1 xs:flex-initial min-h-[44px] flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl duo-btn-white text-xs sm:text-sm font-black cursor-pointer shadow-xs"
                 title="Contacto directo"
               >
-                <Mail className="w-4 h-4 text-[#1cb0f6]" />
+                <Mail className="w-4 h-4 text-[#18181b]" />
                 <span>Correo</span>
               </a>
             )}

@@ -94,7 +94,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f7f7f7] text-[#3c3c3c] font-sans antialiased selection:bg-[#58cc02] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#f7f7f7] text-[#18181b] font-sans antialiased selection:bg-[#18181b] selection:text-white">
       {/* Duolingo Sticky Top Header (Status Bar + Desktop Nav) */}
       <Header
         currentPage={currentPage}

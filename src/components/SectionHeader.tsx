@@ -26,7 +26,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
             className={`inline-flex items-center px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-xl text-xs sm:text-sm font-extrabold uppercase tracking-wider ${
               dark
                 ? 'bg-white/10 text-white border border-white/20'
-                : 'bg-[#e5f6ff] text-[#1cb0f6] border border-[#84d8ff]'
+                : 'bg-[#f4f4f5] text-[#18181b] border border-[#e4e4e7]'
             }`}
           >
             {kicker}
@@ -36,7 +36,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
 
       <h2
         className={`font-display text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight ${
-          dark ? 'text-white' : 'text-[#3c3c3c]'
+          dark ? 'text-white' : 'text-[#18181b]'
         }`}
       >
         {title}

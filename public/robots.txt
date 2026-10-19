@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# AI & LLM Search Crawlers
+# AI & LLM Search and Answer Engines (Generative Engine Optimization / AIO)
 User-agent: GPTBot
 Allow: /
 
@@ -26,11 +26,36 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: GoogleOther
+Allow: /
+
 User-agent: Applebot-Extended
 Allow: /
 
-User-agent: CCBot
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Cohere-ai
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: DuckAssistBot
 Allow: /
 
 # Sitemap
 Sitemap: https://bytedav.com/sitemap.xml
+
+# LLM & AI Knowledge Feeds (AIO Standard):
+# https://bytedav.com/llms.txt
+# https://bytedav.com/llms-full.txt

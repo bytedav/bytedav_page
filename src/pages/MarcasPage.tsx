@@ -8,7 +8,7 @@ export const MarcasPage: React.FC = () => {
     <div id="marcas-page" className="w-full flex flex-col pb-10 sm:pb-16">
       {/* 1. Duolingo Unit Header Banner */}
       <section className="w-full px-3.5 sm:px-8 max-w-7xl mx-auto pt-4 sm:pt-8">
-        <div className="bg-[#1cb0f6] border-b-6 border-[#1899d6] rounded-3xl sm:rounded-4xl p-6 sm:p-12 text-white shadow-md">
+        <div className="bg-[#18181b] border-b-6 border-[#09090b] rounded-3xl sm:rounded-4xl p-6 sm:p-12 text-white shadow-md">
           <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight font-display leading-[1.1]">
             Marcas especializadas con impacto de mercado.
           </h1>

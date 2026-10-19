@@ -65,17 +65,17 @@ export const BlogPage: React.FC<BlogPageProps> = ({
             {/* Unboxed Metadata (Zero-pill discipline) */}
             <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-[#71717a] font-bold mb-4 font-mono">
               <span className="flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5 text-[#58cc02]" />
+                <Calendar className="w-3.5 h-3.5 text-[#71717a]" />
                 {formatDate(selectedPost.date)}
               </span>
               <span aria-hidden="true" className="text-[#d4d4d8]">·</span>
               <span className="flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5 text-[#1cb0f6]" />
+                <Clock className="w-3.5 h-3.5 text-[#71717a]" />
                 {selectedPost.readTime}
               </span>
               <span aria-hidden="true" className="text-[#d4d4d8]">·</span>
               <span className="flex items-center gap-1.5 text-[#18181b]">
-                <User className="w-3.5 h-3.5 text-[#ce82ff]" />
+                <User className="w-3.5 h-3.5 text-[#71717a]" />
                 {selectedPost.author}
               </span>
             </div>
@@ -86,7 +86,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
             </h1>
 
             {/* Standfirst / Lead description */}
-            <p className="text-base sm:text-xl text-[#3f3f46] font-semibold leading-relaxed border-l-4 border-[#58cc02] pl-4 sm:pl-6 my-6 bg-[#f7f7f7] py-3.5 rounded-r-2xl">
+            <p className="text-base sm:text-xl text-[#3f3f46] font-semibold leading-relaxed border-l-4 border-[#18181b] pl-4 sm:pl-6 my-6 bg-[#f7f7f7] py-3.5 rounded-r-2xl">
               {selectedPost.description}
             </p>
 
@@ -152,7 +152,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
               <article
                 key={postSlug}
                 onClick={() => handleSelectPost(postSlug)}
-                className="group bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border-2 border-b-4 border-[#e5e5e5] hover:border-[#58cc02] transition-all duration-150 cursor-pointer shadow-xs flex flex-col justify-between"
+                className="group bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border-2 border-b-4 border-[#e5e5e5] hover:border-[#18181b] transition-all duration-150 cursor-pointer shadow-xs flex flex-col justify-between"
               >
                 <div>
                   {/* Unboxed Metadata Header (Zero-pill discipline) */}
@@ -165,7 +165,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
                   </div>
 
                   {/* Minimalist Title */}
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-[#18181b] font-display tracking-tight leading-snug group-hover:text-[#58cc02] transition-colors mb-2.5">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-[#18181b] font-display tracking-tight leading-snug group-hover:text-black transition-colors mb-2.5">
                     {post.title}
                   </h2>
 
@@ -177,12 +177,12 @@ export const BlogPage: React.FC<BlogPageProps> = ({
 
                 {/* Minimalist Action Footnote */}
                 <div className="mt-5 pt-3.5 border-t border-[#f4f4f5] flex items-center justify-between">
-                  <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-[#58cc02] group-hover:underline flex items-center gap-1.5">
+                  <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-[#18181b] group-hover:underline flex items-center gap-1.5">
                     <span>Leer artículo</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </span>
 
-                  <BookOpen className="w-4 h-4 text-[#a1a1aa] group-hover:text-[#58cc02] transition-colors" />
+                  <BookOpen className="w-4 h-4 text-[#a1a1aa] group-hover:text-[#18181b] transition-colors" />
                 </div>
               </article>
             );

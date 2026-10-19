@@ -14,15 +14,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   const getPillarIcon = (idx: number) => {
     switch (idx) {
       case 0:
-        return <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-[#58cc02]" />;
+        return <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-[#18181b]" />;
       case 1:
-        return <Layers className="w-5 h-5 sm:w-6 sm:h-6 text-[#1cb0f6]" />;
+        return <Layers className="w-5 h-5 sm:w-6 sm:h-6 text-[#18181b]" />;
       case 2:
-        return <Cpu className="w-5 h-5 sm:w-6 sm:h-6 text-[#ce82ff]" />;
+        return <Cpu className="w-5 h-5 sm:w-6 sm:h-6 text-[#18181b]" />;
       case 3:
-        return <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-[#ff9600]" />;
+        return <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-[#18181b]" />;
       default:
-        return <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-[#58cc02]" />;
+        return <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-[#18181b]" />;
     }
   };
 
@@ -75,7 +75,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       <section className="w-full px-3.5 sm:px-8 max-w-7xl mx-auto mt-10 sm:mt-14">
         <div className="flex items-center justify-between mb-4 sm:mb-6">
           <div>
-            <div className="inline-block px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-xl bg-[#e5f6ff] text-[#1cb0f6] border border-[#84d8ff] text-xs sm:text-sm font-black uppercase tracking-wider mb-1.5 sm:mb-2">
+            <div className="inline-block px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-xl bg-[#f4f4f5] text-[#18181b] border border-[#e4e4e7] text-xs sm:text-sm font-black uppercase tracking-wider mb-1.5 sm:mb-2">
               Marcas
             </div>
             <h2 className="text-2xl sm:text-4xl font-black text-[#18181b] font-display tracking-tight">
