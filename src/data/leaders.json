@@ -4,14 +4,15 @@
     "name": "David Bermúdez A.",
     "area": "Fundador y CEO",
     "bio": "Estratega de negocios y emprendedor enfocado en crear y escalar plataformas tecnológicas en el sector de movilidad y economía real.",
-    "image": "/david%20bermudez.png",
-    "linkedin": "https://linkedin.com/in/davidbermudeza",
+    "image": "/david bermudez.png",
     "email": "bytedav@gmail.com",
+    "linkedin": "https://linkedin.com/in/davidbermudeza",
     "specialties": [
       "Liderazgo Estratégico",
       "Marketing Digital",
       "Arquitectura de Sistemas",
-      "Escalamiento de Negocios"
+      "Escalamiento de Negocios",
+      "Emprendedor"
     ]
   }
 ]
