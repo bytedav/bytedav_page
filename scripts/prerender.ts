@@ -218,7 +218,6 @@ ${HOLDING_CONFIG.name} opera bajo un modelo de autonomía operativa para cada em
 ${leaderLine}
 - **Contacto Corporativo**: ${HOLDING_CONFIG.contactEmail}
 - **Sitio Web Oficial**: ${HOLDING_CONFIG.domain}/
-- **Canal de LinkedIn**: ${HOLDING_CONFIG.socialLinks.linkedin}
 
 ## Marcas del Portafolio
 
@@ -286,12 +285,6 @@ ${post.content || post.description}
 - **Sede de operaciones**: América Latina y Global
 - **Dominio oficial**: ${HOLDING_CONFIG.domain}/
 - **Email de contacto**: ${HOLDING_CONFIG.contactEmail}
-- **Canales oficiales**:
-  - LinkedIn: ${HOLDING_CONFIG.socialLinks.linkedin}
-  - Instagram: ${HOLDING_CONFIG.socialLinks.instagram}
-  - Facebook: ${HOLDING_CONFIG.socialLinks.facebook}
-  - TikTok: ${HOLDING_CONFIG.socialLinks.tiktok}
-  - YouTube: ${HOLDING_CONFIG.socialLinks.youtube}
 
 ---
 

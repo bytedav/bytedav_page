@@ -36,13 +36,17 @@ const DEFAULT_OG_IMAGE = `${DOMAIN}/bytedav.png`;
 const DEFAULT_LOCALE = 'es_LA';
 const LAST_MOD_DATE = new Date().toISOString().split('T')[0];
 
-const socialUrls = [
-  HOLDING_CONFIG.socialLinks.linkedin,
-  HOLDING_CONFIG.socialLinks.facebook,
-  HOLDING_CONFIG.socialLinks.instagram,
-  HOLDING_CONFIG.socialLinks.tiktok,
-  HOLDING_CONFIG.socialLinks.youtube,
-].filter(Boolean);
+const socialUrls = (
+  HOLDING_CONFIG.socialLinks
+    ? [
+        HOLDING_CONFIG.socialLinks.linkedin,
+        HOLDING_CONFIG.socialLinks.facebook,
+        HOLDING_CONFIG.socialLinks.instagram,
+        HOLDING_CONFIG.socialLinks.tiktok,
+        HOLDING_CONFIG.socialLinks.youtube,
+      ]
+    : []
+).filter(Boolean);
 
 // Base Corporation / Organization Schema for Knowledge Graphs
 const corporationSchema = {
@@ -64,7 +68,7 @@ const corporationSchema = {
   description: `${HOLDING_CONFIG.name} es un holding operador tecnológico que estructura, opera y escala marcas especializadas de alto impacto en la economía real con autonomía operativa y soberanía de software.`,
   email: HOLDING_CONFIG.contactEmail,
   foundingDate: '2023',
-  sameAs: socialUrls,
+  ...(socialUrls.length > 0 ? { sameAs: socialUrls } : {}),
   knowsAbout: [
     'Holding Tecnológico',
     'Venture Building',
@@ -219,7 +223,7 @@ const LIDERAZGO_FAQS: FAQItem[] = [
   {
     question: '¿Cómo contactar al equipo directivo de Bytedav para alianzas?',
     answer:
-      'Puede enviar consultas corporativas, propuestas de alianza o deal flow directamente al correo bytedav@gmail.com o a través del canal institucional de LinkedIn.',
+      'Puede enviar consultas corporativas, propuestas de alianza o deal flow directamente al correo bytedav@gmail.com.',
   },
 ];
 
