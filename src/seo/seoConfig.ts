@@ -1,5 +1,6 @@
 import { PageId } from '../types';
 import { HOLDING_CONFIG, PORTFOLIO_BRANDS, LEADERS, MILESTONES, HOLDING_PILLARS, BLOG_POSTS } from '../data/holdingData';
+import { LEGAL_DOCS, LEGAL_LAST_UPDATED_ISO, LegalDocId, legalDocToHtml } from '../data/legalContent';
 
 export interface FAQItem {
   question: string;
@@ -226,6 +227,51 @@ const LIDERAZGO_FAQS: FAQItem[] = [
       'Puede enviar consultas corporativas, propuestas de alianza o deal flow directamente al correo bytedav@gmail.com.',
   },
 ];
+
+const createLegalSEO = (id: LegalDocId): RouteSEO => {
+  const doc = LEGAL_DOCS[id];
+  const url = `${DOMAIN}${doc.path}`;
+  return {
+    pageId: id,
+    path: doc.path,
+    title: doc.seoTitle,
+    description: doc.seoDescription,
+    keywords: `${doc.title}, Bytedav, ${id === 'privacidad' ? 'protección de datos, inicio de sesión con Google, derechos ARCO' : 'condiciones de uso, términos del servicio'}`,
+    author: 'Bytedav',
+    canonicalUrl: url,
+    ogImage: DEFAULT_OG_IMAGE,
+    ogImageWidth: 1200,
+    ogImageHeight: 630,
+    ogImageType: 'image/png',
+    ogType: 'website',
+    ogLocale: DEFAULT_LOCALE,
+    siteName: HOLDING_CONFIG.name,
+    twitterCard: 'summary',
+    robots: 'index, follow',
+    changefreq: 'yearly',
+    priority: 0.3,
+    lastmod: LEGAL_LAST_UPDATED_ISO,
+    jsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        '@id': `${url}#webpage`,
+        url,
+        name: doc.title,
+        description: doc.seoDescription,
+        inLanguage: 'es',
+        dateModified: LEGAL_LAST_UPDATED_ISO,
+        isPartOf: { '@id': `${DOMAIN}/#website` },
+        publisher: { '@id': `${DOMAIN}/#corporation` },
+      },
+      createBreadcrumbs([
+        { name: 'Inicio', url: `${DOMAIN}/` },
+        { name: doc.title, url },
+      ]),
+    ],
+    noscriptSummary: legalDocToHtml(doc),
+  };
+};
 
 export const SEO_CONFIG: Record<PageId, RouteSEO> = {
   home: {
@@ -551,6 +597,8 @@ export const SEO_CONFIG: Record<PageId, RouteSEO> = {
       </nav>
     `,
   },
+  privacidad: createLegalSEO('privacidad'),
+  terminos: createLegalSEO('terminos'),
   '404': {
     pageId: '404',
     path: '/404',
@@ -659,6 +707,8 @@ export const SITEMAP_ROUTES = [
   SEO_CONFIG.liderazgo,
   SEO_CONFIG.marcas,
   SEO_CONFIG.blog,
+  SEO_CONFIG.privacidad,
+  SEO_CONFIG.terminos,
   ...BLOG_POSTS.map((post) => getBlogPostSEO(post.slug || post.id!)).filter(
     (item): item is RouteSEO => item !== null
   ),

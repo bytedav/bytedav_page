@@ -10,6 +10,7 @@ import { LiderazgoPage } from './pages/LiderazgoPage';
 import { MarcasPage } from './pages/MarcasPage';
 import { BlogPage } from './pages/BlogPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { LegalPage } from './pages/LegalPage';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
@@ -30,7 +31,7 @@ export default function App() {
       } else if (cleanHash.startsWith('blog/')) {
         targetPage = 'blog';
         slug = cleanHash.replace(/^blog\//, '').trim();
-      } else if (['home', 'historia', 'liderazgo', 'marcas'].includes(cleanHash)) {
+      } else if (['home', 'historia', 'liderazgo', 'marcas', 'privacidad', 'terminos'].includes(cleanHash)) {
         targetPage = cleanHash as PageId;
       } else if (cleanHash) {
         targetPage = '404';
@@ -56,7 +57,7 @@ export default function App() {
       return { page: 'blog', slug };
     }
 
-    if (['historia', 'liderazgo', 'marcas'].includes(rawPath)) {
+    if (['historia', 'liderazgo', 'marcas', 'privacidad', 'terminos'].includes(rawPath)) {
       return { page: rawPath as PageId };
     }
 
@@ -114,6 +115,8 @@ export default function App() {
             onSelectPost={(slug) => navigateTo('blog', slug)}
           />
         )}
+        {currentPage === 'privacidad' && <LegalPage docId="privacidad" onNavigate={(page) => navigateTo(page)} />}
+        {currentPage === 'terminos' && <LegalPage docId="terminos" onNavigate={(page) => navigateTo(page)} />}
         {currentPage === '404' && <NotFoundPage onNavigate={(page) => navigateTo(page)} />}
       </main>
 

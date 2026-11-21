@@ -40,6 +40,29 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             ))}
           </div>
         </div>
+
+        {/* Legal */}
+        <div className="mt-6 pt-5 border-t border-[#27272a] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-bold text-zinc-400">
+          <span>© {new Date().getFullYear()} Bytedav. Todos los derechos reservados.</span>
+          <div className="flex items-center gap-4">
+            {[
+              { id: 'privacidad' as const, label: 'Política de Privacidad', href: '/privacidad' },
+              { id: 'terminos' as const, label: 'Términos y Condiciones', href: '/terminos' },
+            ].map((item) => (
+              <a
+                key={item.id}
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate(item.id);
+                }}
+                className="hover:text-white underline-offset-4 hover:underline transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </footer>
   );

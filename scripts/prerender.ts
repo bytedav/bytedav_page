@@ -402,6 +402,14 @@ export function runPrerender() {
       }
     }
 
+    // 5.2 Páginas legales (/privacidad, /terminos)
+    for (const legalSeo of [SEO_CONFIG.privacidad, SEO_CONFIG.terminos]) {
+      const legalDir = path.join(distDir, legalSeo.path.replace(/^\//, ''));
+      fs.mkdirSync(legalDir, { recursive: true });
+      fs.writeFileSync(path.join(legalDir, 'index.html'), generatePageHtml(baseHtml, legalSeo), 'utf-8');
+      console.log(`✅ Generated dist${legalSeo.path}/index.html`);
+    }
+
     // 6. 404
     const notFoundHtml = generatePageHtml(baseHtml, SEO_CONFIG['404']);
     fs.writeFileSync(path.join(distDir, '404.html'), notFoundHtml, 'utf-8');
